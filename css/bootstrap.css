@@ -4394,7 +4394,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-nav > li > a {
     padding:15px 25px;
     font-size: 16px;
-    color: white;
+    color: #00A8FF;
   }
 }
 .navbar-form {
