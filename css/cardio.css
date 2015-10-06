@@ -3,7 +3,7 @@ body {
 	font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	overflow-x: hidden;
-	color: #2a3237;
+	color: #1967a9;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -143,7 +143,7 @@ header .typed-cursor {
 	font-size: 60px;
 	display: inline-block;
 	margin: 0 10px;
-	color: #00a8ff;
+	color: #1967a9;
 	-webkit-animation-name: flash;
 	animation-name: flash;
 	-webkit-animation-duration: 1s;
@@ -154,7 +154,7 @@ header .typed-cursor {
 
 a {
 	text-decoration: none;
-	color: #00a8ff;
+	color: #1967a9;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
@@ -209,7 +209,7 @@ nav.navbar-fixed-top .navbar-nav > li > a:not(.btn) {
 }
 
 .btn.btn-blue {
-	background: #00a8ff;
+	background: #1967a9;
 }
 
 .btn.btn-blue:hover {
@@ -217,14 +217,14 @@ nav.navbar-fixed-top .navbar-nav > li > a:not(.btn) {
 }
 
 .btn.btn-blue-fill {
-	color: #00a8ff;
-	border-color: #00a8ff;
+	color: #1967a9;
+	border-color: #1967a9;
 	background: transparent;
 }
 
 .btn.btn-blue-fill:hover {
 	color: white;
-	background: #00a8ff;
+	background: #1967a9;
 }
 
 .btn.btn-white-fill {
@@ -654,7 +654,7 @@ section {
 /* Footer */
 
 footer {
-	padding: 140px 0 40px;
+	padding: 70px 0 45px;
 	background: url('../img/footer.jpg');
 	-webkit-background-size: cover;
 	background-size: cover;
@@ -924,7 +924,7 @@ footer .social-footer li:hover a {
 }
 
 .btn.btn-submit:hover {
-	color: #00a8ff;
+	color: #1967a9;
 	background: #fff;
 }
 
@@ -1015,11 +1015,11 @@ footer .social-footer li:hover a {
 }
 
 .blue {
-	color: #00a8ff;
+	color: #1967a9;
 }
 
 .blue-bg {
-	background: #00a8ff;
+	background: #1967a9;
 }
 
 .muted {

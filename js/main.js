@@ -38,7 +38,8 @@ jQuery(function($) {
 		});
 		$('.owl-testimonials').owlCarousel({
 			singleItem: true,
-			pagination: true
+			pagination: true,
+            autoPlay: true
 		});
 		$('.owl-twitter').owlCarousel({
 			singleItem: true,
