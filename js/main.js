@@ -132,7 +132,7 @@ jQuery(function($) {
 		event.preventDefault();
 	});
 
-	$('body').on('click', 'nav.original .navbar-nav a:not([data-toggle])', function() {
+	$('body').on('click', 'nav.original .navbar-nav a:not([data-toggle])', function(event) {
 		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 			event.stopPropagation();
 			var target = $(this.hash);

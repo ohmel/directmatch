@@ -9,12 +9,12 @@
  * 9/8/13 10:25 PM
  */
 
-angular.module('ngFacebook', [])
-  .provider('$facebook', function() {
+
+dmApp.provider('$facebook', function() {
     var config = {
       permissions:    'email',
-      appId:          null,
-      version:        'v1.0',
+      appId:          '1490175181279074',
+      version:        'v2.1',
       customInit:     {}
     };
 

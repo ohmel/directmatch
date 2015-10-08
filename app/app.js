@@ -1,0 +1,161 @@
+/**
+ * Created by Ohmel on 7/29/2015.
+ */
+// app.js
+
+// create the module and name it scotchApp
+var dmApp = angular.module('dmApp', ['angular-confirm', 'ngRoute', 'ngAnimate', 'ngDialog', 'ngNotify', 'ngCookies', 'ui.bootstrap', 'ngMessages', 'ui.tinymce']);
+dmApp.filter('to_trusted', ['$sce', function ($sce) {
+    return function (text) {
+        return $sce.trustAsHtml(text);
+    };
+}]);
+dmApp.run(function ($rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (e, current, pre) {
+        $rootScope.currentRoute = current.$$route.originalPath;
+    });
+
+});
+
+/**
+ * Created by Ohmel on 7/29/2015.
+ */
+dmApp.controller('mainController', function ($location, $scope, Globals, ngDialog, $rootScope, $cookies, mainService) {
+
+    // create a message to display in our view
+    $scope.globals = Globals;
+    $scope.isLoggedIn = false;
+    $scope.jobs = [];
+    //$scope.jobs = [
+    //    [
+    //        {
+    //            "job_title": "Programmer For Hire",
+    //            "job_desc": "The Western Sugar Cooperative is a sugar refining/manufacturing company with over $400M in annual sales.",
+    //            "job_id": "5",
+    //            "user_id": "1",
+    //            "category": "TSR",
+    //            "salary_range": "1,000 - 40,000",
+    //            "published": "1",
+    //            "user_fullname": "Administrator",
+    //            "applications": "1"
+    //        },
+    //        {
+    //            "job_title": "Bilingual Openings – CSR and TSR",
+    //            "job_desc": "We are looking for Bilingual Agents – Work for a CSR and TSR Account",
+    //            "job_id": "6",
+    //            "user_id": "1",
+    //            "category": "CSR",
+    //            "salary_range": "10,000 - 80,000",
+    //            "published": "1",
+    //            "user_fullname": "Administrator",
+    //            "applications": "1"
+    //        },
+    //        {
+    //            "job_title": "My First Job Edited",
+    //            "job_desc": "asdfasdfdsa",
+    //            "job_id": "7",
+    //            "user_id": "1",
+    //            "category": "TSR",
+    //            "salary_range": "10,000 - 20,000",
+    //            "published": "2",
+    //            "user_fullname": "Administrator",
+    //            "applications": "0"
+    //        }
+    //    ],
+    //    [
+    //        {
+    //            "job_title": "sadfasfd",
+    //            "job_desc": "safasfsad",
+    //            "job_id": "8",
+    //            "user_id": "1",
+    //            "category": "TSR",
+    //            "salary_range": "1,000 - 1,999",
+    //            "published": "1",
+    //            "user_fullname": "Administrator",
+    //            "applications": "0"
+    //        },
+    //        {
+    //            "job_title": "5",
+    //            "job_desc": "5dfgsfdgfdg",
+    //            "job_id": "9",
+    //            "user_id": "1",
+    //            "category": "TSR",
+    //            "salary_range": "1,000 - 122,134",
+    //            "published": "1",
+    //            "user_fullname": "Administrator",
+    //            "applications": "0"
+    //        },
+    //        {
+    //            "job_title": "sdf sadf df",
+    //            "job_desc": "sa df sadf",
+    //            "job_id": "10",
+    //            "user_id": "1",
+    //            "category": "TSR",
+    //            "salary_range": "20,000 - 23,432",
+    //            "published": "2",
+    //            "user_fullname": "Administrator",
+    //            "applications": "0"
+    //        }
+    //    ],
+    //    [
+    //        {
+    //            "job_title": "as fsad fsad",
+    //            "job_desc": "sadfsad f",
+    //            "job_id": "11",
+    //            "user_id": "1",
+    //            "category": "TSR",
+    //            "salary_range": "1,000 - 234,324",
+    //            "published": "2",
+    //            "user_fullname": "Administrator",
+    //            "applications": "0"
+    //        },
+    //        {
+    //            "job_title": "sda fsda",
+    //            "job_desc": "s dfas fds",
+    //            "job_id": "12",
+    //            "user_id": "1",
+    //            "category": "CSR",
+    //            "salary_range": "10,000 - 34,234,234",
+    //            "published": "1",
+    //            "user_fullname": "Administrator",
+    //            "applications": "0"
+    //        },
+    //        {
+    //            "job_title": "sadfsafsadf",
+    //            "job_desc": "sdfsdfa sdf",
+    //            "job_id": "13",
+    //            "user_id": "1",
+    //            "category": "CSR",
+    //            "salary_range": "10,000 - 2,314,123",
+    //            "published": "1",
+    //            "user_fullname": "Administrator",
+    //            "applications": "0"
+    //        }
+    //    ],
+    //    [
+    //        {
+    //            "job_title": "sdf sdaf sdf",
+    //            "job_desc": "s afsa fsdaf",
+    //            "job_id": "14",
+    //            "user_id": "1",
+    //            "category": "CSR / TSR",
+    //            "salary_range": "1,000 - 123,123,213",
+    //            "published": "2",
+    //            "user_fullname": "Administrator",
+    //            "applications": "0"
+    //        }
+    //    ]
+    //];
+
+    $scope.ohmel = "sdafadsfadsf";
+
+    mainService.fetchJobs(
+        function (success) {
+            angular.copy(success.data, $scope.jobs);
+            //$scope.jobs =
+        }, function (error) {
+
+        });
+
+});
+// create the controller and inject Angular's $scope
