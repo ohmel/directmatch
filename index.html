@@ -33,6 +33,25 @@
     <link rel="stylesheet" type="text/css" href="fonts/eleganticons/et-icons.css">
     <!-- Main style -->
     <link rel="stylesheet" type="text/css" href="css/cardio.css">
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        var myCenter = new google.maps.LatLng(14.55644538, 121.02571115);
+
+        function initialize() {
+            var mapProp = {
+                center: myCenter,
+                zoom: 18,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({
+                position: myCenter
+            });
+            marker.setMap(map);
+
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </head>
 
 <body>
@@ -85,382 +104,305 @@
         </div>
     </div>
 </header>
-<section id="services" class="section section-padded">
-    <div class="cut cut-top"></div>
+<div>
+
+</div>
+<section class="section section-padded" id="services">
     <div class="container">
         <div class="row intro-tables">
-            <section>
-                <!--Desktop UI-->
-                <!--Desktop UI-->
-                <!--Desktop UI-->
-                <div class="col-lg-12 col-md-12 hidden-sm hidden-xs">
-                    <br/>
+            <!--Desktop UI-->
+            <!--Desktop UI-->
+            <!--Desktop UI-->
+            <div class="col-lg-12 col-md-12 hidden-sm hidden-xs">
+                <br/>
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-md-offset-2 col-lg-offset-2">
-                                <h3>WE WELCOME FRESHERS!</h3>
-                                <h5 class="light muted">
-                                    Job openings for Fresh Graduates and Undergraduates are available.
-                                    Apply as Customer Care or Technical Support!</h5>
-                            </div>
-                            <div class="col-md-3 col-lg-3  " style="padding:2%;">
-                                <a class="btn btn-info btn-xs" style="background-color: #31B9FF" type="submit">Apply
-                                    Now</a>
-                            </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-md-offset-2 col-lg-offset-2">
+                            <h3>WE WELCOME FRESHERS!</h3>
+                            <h5 class="light muted">
+                                Job openings for Fresh Graduates and Undergraduates are available.
+                                Apply as Customer Care or Technical Support!</h5>
                         </div>
-                    </div>
-                    <br/>
-
-                    <div class="intro-table intro-table-third">
-                        <h4 style=" padding: 2%; color: #ffffff">Our Latest Job Offers</h4>
-
-                        <div class="owl-testimonials bottom">
-
-                            <!--Can add item via div item-->
-                            <!--Can add item via div item-->
-                            <!--Can add item via div item-->
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col=md-4 col-lg-4">
-                                        <div>
-                                            <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                <b style="font-size: 15px">
-                                                    DIRECT HIRING: Customer Care Reps <br/>
-                                                    (No Exp Needed)<br/>
-                                                </b>
-                                                <br/>
-                                                PHP 14,000 – PHP 18,000 <br/>
-                                                Makati City, Philippines
-                                            </p>
-                                        </div>
-                                        <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
-                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                               type="submit">Apply Now</a>
-                                        </div>
-                                        <br/>
-                                    </div>
-                                    <div class="col=md-4 col-lg-4">
-                                        <div>
-                                            <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                <b style="font-size: 15px">
-                                                    DIRECT HIRING: Customer Care Reps <br/>
-                                                    (No Exp Needed)<br/>
-                                                </b>
-                                                <br/>
-                                                PHP 14,000 – PHP 18,000 <br/>
-                                                Makati City, Philippines
-                                            </p>
-                                        </div>
-                                        <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
-                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                               type="submit">Apply Now</a>
-                                        </div>
-                                        <br/>
-                                    </div>
-                                    <div class="col=md-4 col-lg-4">
-                                        <div>
-                                            <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                <b style="font-size: 15px">
-                                                    DIRECT HIRING: Customer Care Reps <br/>
-                                                    (No Exp Needed)<br/>
-                                                </b>
-                                                <br/>
-                                                PHP 14,000 – PHP 18,000 <br/>
-                                                Makati City, Philippines
-                                            </p>
-                                        </div>
-                                        <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
-                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                               type="submit">Apply Now</a>
-                                        </div>
-                                        <br/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col=md-4 col-lg-4">
-                                        <div>
-                                            <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                <b style="font-size: 15px">
-                                                    DIRECT HIRING: Customer Care Reps <br/>
-                                                    (No Exp Needed)<br/>
-                                                </b>
-                                                <br/>
-                                                PHP 14,000 – PHP 18,000 <br/>
-                                                Makati City, Philippines
-                                            </p>
-                                        </div>
-                                        <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
-                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                               type="submit">Apply Now</a>
-                                        </div>
-                                        <br/>
-                                    </div>
-                                    <div class="col=md-4 col-lg-4">
-                                        <div>
-                                            <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                <b style="font-size: 15px">
-                                                    DIRECT HIRING: Customer Care Reps <br/>
-                                                    (No Exp Needed)<br/>
-                                                </b>
-                                                <br/>
-                                                PHP 14,000 – PHP 18,000 <br/>
-                                                Makati City, Philippines
-                                            </p>
-                                        </div>
-                                        <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
-                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                               type="submit">Apply Now</a>
-                                        </div>
-                                        <br/>
-                                    </div>
-                                    <div class="col=md-4 col-lg-4">
-                                        <div>
-                                            <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                <b style="font-size: 15px">
-                                                    DIRECT HIRING: Customer Care Reps <br/>
-                                                    (No Exp Needed)<br/>
-                                                </b>
-                                                <br/>
-                                                PHP 14,000 – PHP 18,000 <br/>
-                                                Makati City, Philippines
-                                            </p>
-                                        </div>
-                                        <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
-                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                               type="submit">Apply Now</a>
-                                        </div>
-                                        <br/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col=md-4 col-lg-4">
-                                        <div>
-                                            <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                <b style="font-size: 15px">
-                                                    DIRECT HIRING: Customer Care Reps <br/>
-                                                    (No Exp Needed)<br/>
-                                                </b>
-                                                <br/>
-                                                PHP 14,000 – PHP 18,000 <br/>
-                                                Makati City, Philippines
-                                            </p>
-                                        </div>
-                                        <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
-                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                               type="submit">Apply Now</a>
-                                        </div>
-                                        <br/>
-                                    </div>
-                                    <div class="col=md-4 col-lg-4">
-                                        <div>
-                                            <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                <b style="font-size: 15px">
-                                                    DIRECT HIRING: Customer Care Reps <br/>
-                                                    (No Exp Needed)<br/>
-                                                </b>
-                                                <br/>
-                                                PHP 14,000 – PHP 18,000 <br/>
-                                                Makati City, Philippines
-                                            </p>
-                                        </div>
-                                        <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
-                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                               type="submit">Apply Now</a>
-                                        </div>
-                                        <br/>
-                                    </div>
-                                    <div class="col=md-4 col-lg-4">
-                                        <div>
-                                            <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                <b style="font-size: 15px">
-                                                    DIRECT HIRING: Customer Care Reps <br/>
-                                                    (No Exp Needed)<br/>
-                                                </b>
-                                                <br/>
-                                                PHP 14,000 – PHP 18,000 <br/>
-                                                Makati City, Philippines
-                                            </p>
-                                        </div>
-                                        <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
-                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                               type="submit">Apply Now</a>
-                                        </div>
-                                        <br/>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-md-3 col-lg-3  " style="padding:30px ;">
+                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF" type="submit">Apply
+                                Now</a>
                         </div>
-
-                    </div>
-                    <div style="text-align: right" class="white blue col-md-offset-11">
-                        <a type="submit" name="op" value="Link 1" style="font-family: Arial">
-                            <i class="fa fa-bars"></i>
-                            <b>VIEW ALL
-                            </b>
-                        </a>
                     </div>
                 </div>
+                <br/>
 
-                <!--MOBILE UI-->
-                <!--MOBILE UI-->
-                <!--MOBILE UI-->
-                <div class="owl-testimonials bottom">
+                <div class="intro-table intro-table-third" style="height: 300px">
+                    <h4 style=" padding: 2%; color: #ffffff">Our Latest Job Offers</h4>
 
-                    <div class="col-sm-12 col-xs-12 hidden-md hidden-lg">
+                    <div class="owl-testimonials bottom">
+
+                        <!--Can add item via div item-->
+                        <!--Can add item via div item-->
+                        <!--Can add item via div item-->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col=md-4 col-lg-4">
+                                    <div>
+                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                            <b style="font-size: 15px">
+                                                DIRECT HIRING: Customer Care Reps <br/>
+                                                (No Exp Needed)<br/>
+                                            </b>
+                                            <br/>
+                                            PHP 14,000 – PHP 18,000 <br/>
+                                            Makati City, Philippines
+                                        </p>
+                                    </div>
+                                    <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
+                                        <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
+                                           type="submit">Apply Now</a>
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="col=md-4 col-lg-4">
+                                    <div>
+                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                            <b style="font-size: 15px">
+                                                DIRECT HIRING: Customer Care Reps <br/>
+                                                (No Exp Needed)<br/>
+                                            </b>
+                                            <br/>
+                                            PHP 14,000 – PHP 18,000 <br/>
+                                            Makati City, Philippines
+                                        </p>
+                                    </div>
+                                    <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
+                                        <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
+                                           type="submit">Apply Now</a>
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="col=md-4 col-lg-4">
+                                    <div>
+                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                            <b style="font-size: 15px">
+                                                DIRECT HIRING: Customer Care Reps <br/>
+                                                (No Exp Needed)<br/>
+                                            </b>
+                                            <br/>
+                                            PHP 14,000 – PHP 18,000 <br/>
+                                            Makati City, Philippines
+                                        </p>
+                                    </div>
+                                    <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
+                                        <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
+                                           type="submit">Apply Now</a>
+                                    </div>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col=md-4 col-lg-4">
+                                    <div>
+                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                            <b style="font-size: 15px">
+                                                DIRECT HIRING: Customer Care Reps <br/>
+                                                (No Exp Needed)<br/>
+                                            </b>
+                                            <br/>
+                                            PHP 14,000 – PHP 18,000 <br/>
+                                            Makati City, Philippines
+                                        </p>
+                                    </div>
+                                    <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
+                                        <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
+                                           type="submit">Apply Now</a>
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="col=md-4 col-lg-4">
+                                    <div>
+                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                            <b style="font-size: 15px">
+                                                DIRECT HIRING: Customer Care Reps <br/>
+                                                (No Exp Needed)<br/>
+                                            </b>
+                                            <br/>
+                                            PHP 14,000 – PHP 18,000 <br/>
+                                            Makati City, Philippines
+                                        </p>
+                                    </div>
+                                    <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
+                                        <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
+                                           type="submit">Apply Now</a>
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="col=md-4 col-lg-4">
+                                    <div>
+                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                            <b style="font-size: 15px">
+                                                DIRECT HIRING: Customer Care Reps <br/>
+                                                (No Exp Needed)<br/>
+                                            </b>
+                                            <br/>
+                                            PHP 14,000 – PHP 18,000 <br/>
+                                            Makati City, Philippines
+                                        </p>
+                                    </div>
+                                    <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
+                                        <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
+                                           type="submit">Apply Now</a>
+                                    </div>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col=md-4 col-lg-4">
+                                    <div>
+                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                            <b style="font-size: 15px">
+                                                DIRECT HIRING: Customer Care Reps <br/>
+                                                (No Exp Needed)<br/>
+                                            </b>
+                                            <br/>
+                                            PHP 14,000 – PHP 18,000 <br/>
+                                            Makati City, Philippines
+                                        </p>
+                                    </div>
+                                    <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
+                                        <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
+                                           type="submit">Apply Now</a>
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="col=md-4 col-lg-4">
+                                    <div>
+                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                            <b style="font-size: 15px">
+                                                DIRECT HIRING: Customer Care Reps <br/>
+                                                (No Exp Needed)<br/>
+                                            </b>
+                                            <br/>
+                                            PHP 14,000 – PHP 18,000 <br/>
+                                            Makati City, Philippines
+                                        </p>
+                                    </div>
+                                    <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
+                                        <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
+                                           type="submit">Apply Now</a>
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="col=md-4 col-lg-4">
+                                    <div>
+                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                            <b style="font-size: 15px">
+                                                DIRECT HIRING: Customer Care Reps <br/>
+                                                (No Exp Needed)<br/>
+                                            </b>
+                                            <br/>
+                                            PHP 14,000 – PHP 18,000 <br/>
+                                            Makati City, Philippines
+                                        </p>
+                                    </div>
+                                    <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
+                                        <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
+                                           type="submit">Apply Now</a>
+                                    </div>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="text-align: right" class="white blue col-md-offset-11">
+                    <a type="submit" name="op" value="Link 1" style="font-family: Arial">
+                        <i class="fa fa-bars"></i>
+                        <b>VIEW ALL
+                        </b>
+                    </a>
+                </div>
+            </div>
+
+            <!--MOBILE UI-->
+            <!--MOBILE UI-->
+            <!--MOBILE UI-->
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <div class="owl-testimonials bottom hidden-md hidden-lg">
+
+                <div class="col-sm-12 col-xs-12">
+                    <br/>
+
+                    <div class="row text-center title">
+                        <h5>
+                            <b>
+                                WE WELCOME FRESHERS!
+                            </b>
+
+                        </h5>
+
+                        <p style="font-size: 10px">Job openings for Fresh Graduates and Undergraduates are
+                            available.
+                            Apply as Customer Care or Technical Support!</p>
+                        <a href="url">Apply Now</a>
+
+
+                    </div>
+                    <div class="intro-table intro-table-third">
+                        <h5 style=" padding: 10%; color: #ffffff; text-align: center">Our Latest Job Offers</h5>
                         <br/>
 
-                        <div class="row text-left title">
-                            <h5>
-                                WE WELCOME FRESHERS!
-                            </h5>
-
-                            <p style="font-size: 10px">Job openings for Fresh Graduates and Undergraduates are
-                                available.
-                                Apply as Customer Care or Technical Support!</p>
-                            <a href="url">Apply Now</a>
-
-
-                        </div>
-                        <div class="intro-table intro-table-third">
-                            <h6 style=" padding: 6%; color: #ffffff">Our Latest Job Offers</h6>
-                            <br/>
-
-                            <div class="owl-testimonials bottom">
-                                <div class="item">
-                                    <div class="row">
-                                        <div>
-                                            <div>
-                                                <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                    <b style="font-size: 15px">
-                                                        DIRECT HIRING: Customer Care Reps <br/>
-                                                        (No Exp Needed)<br/>
-                                                    </b>
-                                                    <br/>
-                                                    PHP 14,000 – PHP 18,000 <br/>
-                                                    Makati City, Philippines
-                                                </p>
-                                            </div>
-                                            <div style="text-align: left" class="col-sm-offset-1 col-xs-offset-1">
-                                                <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                                   type="submit">Apply Now</a>
-                                            </div>
+                        <div class="owl-testimonials bottom">
+                            <div class="item">
+                                <div>
+                                    <div>
+                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                            <b style="font-size: 15px">
+                                                DIRECT HIRING: Customer Care Reps <br/>
+                                                (No Exp Needed)<br/>
+                                            </b>
                                             <br/>
+                                            PHP 14,000 – PHP 18,000 <br/>
+                                            Makati City, Philippines
+                                        </p>
+
+                                        <div style="padding-left: 30px">
+                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF;">Apply
+                                                Now</a>
                                         </div>
+
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <div class="row">
-                                        <div>
-                                            <div>
-                                                <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                    <b style="font-size: 20px">
-                                                        Front End Developer<br/>
-                                                    </b>
-                                                    <br/>
-                                                    PHP 30,000 – PHP 40,000 <br/>
-                                                    Makati City, Philippines
-                                                </p>
-                                            </div>
-                                            <div style="text-align: left" class="col-sm-offset-1 col-xs-offset-1">
-                                                <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                                   type="submit">Apply Now</a>
-                                            </div>
-                                            <br/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="row">
-                                        <div>
-                                            <div>
-                                                <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                    <b style="font-size: 20px">
-                                                        Consultant for Hospital Management<br/>
-                                                    </b>
-                                                    <br/>
-                                                    PHP 40,000 – PHP 50,000 <br/>
-                                                    Pasig City, Philippines
-                                                </p>
-                                            </div>
-                                            <div style="text-align: left" class="col-sm-offset-1 col-xs-offset-1">
-                                                <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                                   type="submit">Apply Now</a>
-                                            </div>
-                                            <br/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="row">
-                                        <div>
-                                            <div>
-                                                <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                    <b style="font-size: 20px">
-                                                        Online Technical Support<br/>
-                                                    </b>
-                                                    <br/>
-                                                    PHP 60,000 – PHP 80,000 <br/>
-                                                    Paranaque City, Philippines
-                                                </p>
-                                            </div>
-                                            <div style="text-align: left" class="col-sm-offset-1 col-xs-offset-1">
-                                                <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                                   type="submit">Apply Now</a>
-                                            </div>
-                                            <br/>
-                                        </div>
-                                    </div>
+                                    <br/>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</section>
-<section id="blog" class="section section-padded">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12" style=" background-color: #1967a9; height: 420px; padding-top: 100px">
-                <div class="owl-twitter">
-                    <div class="item" style="text-align: left">
-                        <div class="col-md-12 col-lg-12 col-md-offset-1">
-                            <div class="col-md-4 col-lg-4">
-                                <img src="img/icons/heart-blue.png" alt="" class="icon">
-                            </div>
-                            <div class="col-md-6 col-lg-6">
-                                <h4 style="color: white">How to speak fluent in english and improve your job
-                                    interviews</h4>
-                                <p style="color: #f5f5f5">
-                                    <em>
-                                        Its always good to learn and explore the world of communication, <br/>
-                                        we are always striving for knowledge and that's what makes us unique <br/>
-                                        in other species...
-                                    </em>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item" style="text-align: left">
-                        <div class="col-md-12 col-lg-12 col-md-offset-1">
-                            <div class="col-md-4 col-lg-4">
-                                <img src="img/icons/heart-blue.png" alt="" class="icon">
-                            </div>
-                            <div class="col-md-6 col-lg-6">
-                                <h4 style="color: white">10 Work etiquette's you need to know</h4>
-                                <p style="color: #f5f5f5">
-                                    <em>
-                                        we are always looking for different ways to make our working <br/>
-                                        environment faster. We made a list of things that would help you <br/>
-                                        to achieve your dream working environment..
-                                    </em>
-                                </p>
+                            <div class="item">
+                                <div>
+                                    <div>
+                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                            <b style="font-size: 15px">
+                                                DIRECT HIRING: Customer Care Reps <br/>
+                                                (No Exp Needed)<br/>
+                                            </b>
+                                            <br/>
+                                            PHP 14,000 – PHP 18,000 <br/>
+                                            Makati City, Philippines
+                                        </p>
+
+                                        <div style="padding-left: 30px">
+                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF;">Apply
+                                                Now</a>
+                                        </div>
+
+                                    </div>
+                                    <br/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -469,6 +411,32 @@
         </div>
     </div>
 </section>
+<section id="blog" class="section section-padded blue-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="owl-twitter owl-carousel">
+                    <div class="item text-center">
+                        <i class="icon fa fa-twitter"></i>
+                        <h4 class="white light">To enjoy the glow of good health, you must exercise.</h4>
+                        <h4 class="light-white light">#health #training #exercise</h4>
+                    </div>
+                    <div class="item text-center">
+                        <i class="icon fa fa-twitter"></i>
+                        <h4 class="white light">To enjoy the glow of good health, you must exercise.</h4>
+                        <h4 class="light-white light">#health #training #exercise</h4>
+                    </div>
+                    <div class="item text-center">
+                        <i class="icon fa fa-twitter"></i>
+                        <h4 class="white light">To enjoy the glow of good health, you must exercise.</h4>
+                        <h4 class="light-white light">#health #training #exercise</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="container">
     <div class="row services">
         <div class="col-md-4">
@@ -500,85 +468,244 @@
                 </div>
                 <h4 class="heading">Contact Us</h4>
 
-                <p class="description">Our office is strategically located in the hear of Makati. You can visit our
-                    office at Unit 308
+                <p class="description">Our office is strategically located in the heart of Makati. You can visit our
+                    office at Unit 308. see map below for more details
                 </p>
             </div>
         </div>
     </div>
 </div>
-<div class="cut cut-bottom"></div>
-</section>
 <section id="team" class="section gray-bg">
-    <div class="container">
-        <div class="row title text-center">
-            <h2 class="margin-top">Our Company</h2>
-            <h4 class="light muted">Our office is strategically located in the hear of Makati. You can visit our office
-                at Unit 308</h4>
+    <div class="col-md-12 col-lg-12 hidden-xs hidden-sm">
+        <div class="container">
+            <div class="title text-center">
+                <h2 class="margin-top">Our Company</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="team text-left" style="height: 680px">
+                        <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover ;">
+                            <div class="overlay text-center">
+                                <h2 class="white">Committed</h2>
+                                <h5 class="light light-white">We will do it!</h5>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <div style="text-align: center">
+                                <h4 style="color: #1967a9">Commitment</h4>
+                            </div>
+                            <div style="padding: 30px">
+                                <h5 class="muted regular" style="font-size: 15px;">
+                                    Direct Match Outsourcing is established by a commitment
+                                    to provide employment opportunities to jobseekers in the
+                                    IT and BPO industry. We aim to boost the morale and empower
+                                    individuals by giving useful information and better
+                                    understanding of the position that is suitable for
+                                    maximization of skillsets.
+                                    <br/>
+                                    <br/>
+                                    Teaching individuals to have a better career path by
+                                    educating longevity and result-orientation in employment
+                                    as a paramount goal is our main objective. Matching them
+                                    to our esteemed partners to create transformational
+                                    relationship is our mindset.
+                                </h5>
+                            </div>
+                        </div>
+                        <!--<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>-->
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team text-left" style="height: 680px">
+                        <div class="cover" style="background:url('img/team/team-cover2.jpg'); background-size:cover ;">
+                            <div class="overlay text-center">
+                                <h2 class="white">Passion</h2>
+                                <h5 class="light light-white">For excellence!</h5>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <div style="text-align: center">
+                                <h4 style="color: #1967a9">Passionate</h4>
+                            </div>
+                            <div style="padding: 30px">
+                                <h5 class="muted regular" style="font-size: 15px;">
+                                    The company is passionate in understanding the business
+                                    needs of our clients and aspires to meet target goals
+                                    required to provide long-term solutions. Driven by good
+                                    relationships with our stakeholders, we aim for continuous,
+                                    quality-driven performance.
+                                    <br/>
+                                    <br/>
+                                    Focusing on Entry-level agents, Bilingual agents, IT positions,
+                                    Management and Top-level positions, we guarantee performance
+                                    and accurate staffing through proper screening, evaluation and
+                                    expertise. Through experience, we have developed a keen eye
+                                    on measuring the individual’s capacity to complement the behavioral
+                                    and technical competency of a position.
+                                </h5>
+                            </div>
+                        </div>
+                        <!--<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>-->
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team text-left" style="height: 680px">
+                        <div class="cover" style="background:url('img/team/team-cover3.jpg'); background-size:cover ;">
+                            <div class="overlay text-center">
+                                <h2 class="white">Delivery</h2>
+                                <h5 class="light light-white">of the Best of Results!</h5>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <div style="text-align: center">
+                                <h4 style="color: #1967a9">Delivering the Best Results</h4>
+                            </div>
+                            <div style="padding: 30px">
+                                <h5 class="muted regular" style="font-size: 15px;">
+                                    We only deliver the best results since we believe that such
+                                    is the fundamental part of business affiliations. The staff
+                                    in Direct Match Outsourcing consists of highly talented,
+                                    motivated, multi-skilled and experienced individuals who
+                                    have specialized in Executive Hiring in the previous years
+                                    after surpassing targets on entry-level and mid-level positions.
+                                    The assurance of results to our business partners are based
+                                    on proven deliveries. Thus, making us the epitome of how a
+                                    business solutions provider should be.
+                                </h5>
+                            </div>
+                        </div>
+                        <!--<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>-->
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <br/>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="team text-center" style="height: 500px">
-                    <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;">
-                        <div class="overlay text-center">
-                            <h3 class="white">Committed</h3>
-                            <h5 class="light light-white">We will do it!</h5>
-                        </div>
-                    </div>
-                    <div class="title" style="padding: 10px">
-                        <h4>Commitment</h4>
-                        <h5 class="muted regular" style="font-size: 18px;">
-                        </h5>
-                    </div>
-                    <!--<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>-->
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="team text-center" style="height: 500px">
-                    <div class="cover" style="background:url('img/team/team-cover2.jpg'); background-size:cover;">
-                        <div class="overlay text-center">
-                            <h3 class="white">Passionate</h3>
-                            <h5 class="light light-white">For Excellence!</h5>
-                        </div>
-                    </div>
-                    <img src="img/team/team1.jpg" alt="Team Image" class="avatar">
-
-                    <div class="title" style="padding: 10px">
-                        <h4>Passion</h4>
-                        <h5 class="muted regular">
-                        </h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="team text-center" style="height: 500px">
-                    <div class="cover" style="background:url('img/team/team-cover3.jpg'); background-size:cover;">
-                        <div class="overlay text-center">
-                            <h3 class="white">Delivery</h3>
-                            <h5 class="light light-white">of the Best of Results!</h5>
-                        </div>
-                    </div>
-                    <img src="img/team/team2.jpg" alt="Team Image" class="avatar">
-
-                    <div class="title" style="padding: 10px">
-                        <h4>Quality</h4>
-                        <h5 class="muted regular">
-                        </h5>
-                    </div>
-                    <!--<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up-->
-                    <!--Now</a>-->
-                </div>
-            </div>
+        <div>
+            <h5 style="text-align: center; color: #6f6f6f">
+                For us, Success is Mandatory.</h5>
         </div>
     </div>
 </section>
-<section class="section blue-bg">
-    <div class="container">
-        <div class="row" style="padding: 2%">
-            <div class="col-md-5 white">
-                <h5 style="color: #ffffff">LOCATION</h5>
+<section id="team" class="section gray-bg">
+    <div class="hidden-md hidden-lg">
+        <div class="col-sm-12 col-xs-12">
+            <div class="container">
+                <div class="row title text-center">
+                    <h2 class="margin-top">Our Company</h2>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="team text-left" style="height: 550px">
+                            <div class="cover"
+                                 style="background:url('img/team/team-cover1.jpg'); background-size:cover ;">
+                                <div class="overlay text-center">
+                                    <h2 class="white">Committed</h2>
+                                    <h5 class="light light-white">We will do it!</h5>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <div style="text-align: center">
+                                    <h4 style="color: #1967a9">Commitment</h4>
+                                </div>
+                                <div style="padding: 20px">
+                                    <h5 class="muted regular" style="font-size: 12px;">
+                                        Direct Match Outsourcing is established by a commitment
+                                        to provide employment opportunities to jobseekers in the
+                                        IT and BPO industry. We aim to boost the morale and empower
+                                        individuals by giving useful information and better
+                                        understanding of the position that is suitable for
+                                        maximization of skillsets.
+                                        <br/>
+                                        <br/>
+                                        Teaching individuals to have a better career path by
+                                        educating longevity and result-orientation in employment
+                                        as a paramount goal is our main objective. Matching them
+                                        to our esteemed partners to create transformational
+                                        relationship is our mindset.
+                                    </h5>
+                                </div>
+                            </div>
+                            <!--<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>-->
+                        </div>
+                    </div>
+                    <div>
+                        <div class="team text-left" style="height: 570px">
+                            <div class="cover"
+                                 style="background:url('img/team/team-cover1.jpg'); background-size:cover ;">
+                                <div class="overlay text-center">
+                                    <h2 class="white">Passion</h2>
+                                    <h5 class="light light-white">For excellence!</h5>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <div style="text-align: center">
+                                    <h4 style="color: #1967a9">Passionate</h4>
+                                </div>
+                                <div style="padding: 20px">
+                                    <h5 class="muted regular" style="font-size: 12px;">
+                                        The company is passionate in understanding the business
+                                        needs of our clients and aspires to meet target goals
+                                        required to provide long-term solutions. Driven by good
+                                        relationships with our stakeholders, we aim for continuous,
+                                        quality-driven performance.
+                                        <br/>
+                                        <br/>
+                                        Focusing on Entry-level agents, Bilingual agents, IT positions,
+                                        Management and Top-level positions, we guarantee performance
+                                        and accurate staffing through proper screening, evaluation and
+                                        expertise. Through experience, we have developed a keen eye
+                                        on measuring the individual’s capacity to complement the behavioral
+                                        and technical competency of a position.
+                                    </h5>
+                                </div>
+                            </div>
+                            <!--<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>-->
+                        </div>
+                    </div>
+                    <div>
+                        <div class="team text-left" style="height: 530px">
+                            <div class="cover"
+                                 style="background:url('img/team/team-cover1.jpg'); background-size:cover ;">
+                                <div class="overlay text-center">
+                                    <h2 class="white">Delivery</h2>
+                                    <h5 class="light light-white">of the Best of Results!</h5>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <div style="text-align: center">
+                                    <h4 style="color: #1967a9">Delivering the Best Results</h4>
+                                </div>
+                                <div style="padding: 20px">
+                                    <h5 class="muted regular" style="font-size: 12px;">
+                                        We only deliver the best results since we believe that such
+                                        is the fundamental part of business affiliations. The staff
+                                        in Direct Match Outsourcing consists of highly talented,
+                                        motivated, multi-skilled and experienced individuals who
+                                        have specialized in Executive Hiring in the previous years
+                                        after surpassing targets on entry-level and mid-level positions.
+                                        The assurance of results to our business partners are based
+                                        on proven deliveries. Thus, making us the epitome of how a
+                                        business solutions provider should be.
+                                    </h5>
+                                </div>
+                            </div>
+                            <!--<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>-->
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <br/>
             </div>
         </div>
+        <div>
+            <h4 style="text-align: center; color: #6f6f6f">
+                For us, Success is Mandatory.</h4>
+        </div>
+    </div>
+</section>
+<section class="section" style="padding: 30px">
+    <div id="googleMap" style="height: 350px; width: auto"></div>
 </section>
 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -587,9 +714,24 @@
 
             <h3 class="white">Contact Us</h3>
 
+            <p style="font-size: 12px; color: #ffffff; text-align: center;">
+                Our office is strategically located in the heart of Makati. <br/>
+                You can visit our office at Unit 308 The Atrium of Makati, <br/>
+                Makati Avenue, Makati City.
+                <br/>
+                <br/>
+                You may contact us at our landline, <br/>
+                (02) 893-1610 | 0917-527-8926 | 0917-527-9750 <br/>
+                or <br/>
+                View our map
+                <!--<a href="" target="_blank" >here</a>-->
+                <a onclick="window.open('http://maps.google.com/maps?&z=17&mrt=loc&t=m&q=14.55644538,121.02571115','name','width=800,height=500')">Here</a>
+            </p>
+
             <form action="" class="popup-form">
                 <input type="text" class="form-control form-white" placeholder="Full Name">
-                <input type="text" class="form-control form-white" placeholder="Email Address">
+                <input type="email" class="form-control form-white" placeholder="Email Address">
+                <input type="text" class="form-control form-white" placeholder="Contact Number">
 
                 <div class="dropdown">
                     <button id="dLabel" class="form-control form-white dropdown" type="button" data-toggle="dropdown"
@@ -598,11 +740,12 @@
                     </button>
                     <ul class="dropdown-menu animated fadeIn" role="menu" aria-labelledby="dLabel">
                         <li class="animated lightSpeedIn"><a href="#">Client Partnership</a></li>
-                        <li class="animated lightSpeedIn"><a href="#">Sample data2</a></li>
-                        <li class="animated lightSpeedIn"><a href="#">Sample data2</a></li>
-                        <li class="animated lightSpeedIn"><a href="#">Sample data2</a></li>
+                        <li class="animated lightSpeedIn"><a href="#">Job Inquiry</a></li>
+                        <li class="animated lightSpeedIn"><a href="#">Support</a></li>
+                        <li class="animated lightSpeedIn"><a href="#">Other</a></li>
                     </ul>
                 </div>
+                <textarea class="form-control form-white" placeholder="How can we help you"></textarea>
                 <button type="submit" class="btn btn-submit">Submit</button>
             </form>
         </div>
@@ -615,13 +758,28 @@
                 <h5 style="color: #ffffff">Follow Us for more!</h5>
             </div>
             <div>
-                <li><a href="http://www.facebook.com/pages/Codrops/159107397912"><i class="fa fa-facebook"></i></a>
+                <li>
+                    <a href="https://www.facebook.com/DirectMatchOutsourcingInc?fref=ts" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
                 </li>
-                <li><a href="http://www.twitter.com/codrops"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="https://plus.google.com/101095823814290637419"><i class="fa fa-google-plus"></i></a>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=fiQ3o7FJqFA" target="_blank">
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                <li>
+                    <a href="https://www.linkedin.com/company/direct-match-outsourcing-inc" target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </li>
+
                 </li>
             </div>
         </ul>
+    </div>
+    <div style="text-align: center; color: #ffffff">
+        <br/>
+        Direct Match Outsourcing Inc.Ⓒ 2015
     </div>
 </footer>
 <!-- Holder for mobile navigation -->

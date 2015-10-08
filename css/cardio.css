@@ -486,7 +486,7 @@ section {
 }
 
 .service:hover {
-	border-color: #00a8ff;
+	border-color: #1967a9;
 }
 
 .service:hover .icon-holder {
@@ -516,8 +516,8 @@ section {
 }
 
 .team {
-	margin: 80px 0;
-	padding-bottom: 60px;
+	margin: 0px 0;
+	padding-bottom: 0px;
 	background: white;
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.07);
 }
@@ -770,7 +770,7 @@ footer .social-footer li:hover a {
 
 /* Popup */
 .modal {
-	padding: 0 25px !important;
+	padding: 0 10px !important;
 }
 
 .modal-dialog {
@@ -799,7 +799,7 @@ footer .social-footer li:hover a {
 .popup-form {
 	width: 90%;
 	max-width: 375px;
-	margin: 60px auto;
+	margin: 10px auto;
 }
 
 .popup-form .form-control {
