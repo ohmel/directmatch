@@ -17,7 +17,18 @@ dmApp.service('mainService', function ($http, Globals) {
         }).success(callback).error(errback);
     };
 
+    var fetchJobsMobile = function (callback, errback){
+        $http({
+            method: 'GET',
+            url: url + 'job/frontFetchJobs',
+            params: {
+                m: 1
+            }
+        }).success(callback).error(errback);
+    };
+
     return {
-        fetchJobs: fetchJobs
+        fetchJobs: fetchJobs,
+        fetchJobsMobile: fetchJobsMobile
     };
 });

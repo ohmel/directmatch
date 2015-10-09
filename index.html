@@ -155,7 +155,7 @@
                 <br/>
 
                 <div class="intro-table intro-table-third" style="height: 300px" ng-show="showJobs === true">
-                    <h4 style=" padding: 2%; color: #ffffff">Our Latest Job Offers</h4>
+                    <!--<h4 style=" padding: 2%; color: #ffffff">Our Latest Job Offers</h4>-->
 
                     <!--<div class="bottom">-->
                     <div class="owl-testimonials bottom">
@@ -165,15 +165,18 @@
                         <div class="item" ng-repeat="job in jobs">
                             <div class="row">
                                 <div class="col=md-4 col-lg-4" ng-repeat="detail in job">
-                                    <div style="padding-left: 25px; height: 200px">
+                                    <div style="padding-left: 25px; height: 250px">
                                         <p class="white heading light" style="font-size: 12px; color: #ffffff">
                                             <h4 style="color: white">{{detail.job_title}}</h4>
                                             <b style="font-size: 15px; color: white">
                                                 {{detail.job_desc}}
                                             </b>
                                             <br/>
-                                            {{detail.salary_range}} <br/>
-                                            {{detail.location}}
+                                            <div style="color: white">
+                                                {{detail.salary_range}} <br/>
+                                                {{detail.location}}
+                                            </div>
+
                                         </p>
                                     </div>
                                     <div style="text-align: left; padding-left: 25px" class="">
@@ -226,22 +229,22 @@
 
 
                     </div>
-                    <div class="intro-table intro-table-third">
+                    <div class="intro-table intro-table-third"  ng-show="showJobs === true">
                         <h5 style=" padding: 10%; color: #ffffff; text-align: center">Our Latest Job Offers</h5>
                         <br/>
 
                         <div class="owl-testimonials bottom">
-                            <div class="item">
+                            <div class="item" ng-repeat="jm in jobsMobile">
                                 <div>
                                     <div>
                                         <p class="white heading light" style="font-size: 12px; color: #ffffff">
                                             <b style="font-size: 15px">
-                                                DIRECT HIRING: Customer Care Reps <br/>
-                                                (No Exp Needed)<br/>
+                                                {{jm.job_title}} <br/>
+                                                {{jm.job_desc}}<br/>
                                             </b>
-                                            <br/>
-                                            PHP 14,000 – PHP 18,000 <br/>
-                                            Makati City, Philippines
+                                        <div style="color: white">
+                                            {{jm.salary_range}} <br/>
+                                        </div>
                                         </p>
 
                                         <div style="padding-left: 30px">
@@ -253,28 +256,7 @@
                                     <br/>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div>
-                                    <div>
-                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                            <b style="font-size: 15px">
-                                                DIRECT HIRING: Customer Care Reps <br/>
-                                                (No Exp Needed)<br/>
-                                            </b>
-                                            <br/>
-                                            PHP 14,000 – PHP 18,000 <br/>
-                                            Makati City, Philippines
-                                        </p>
 
-                                        <div style="padding-left: 30px">
-                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF;">Apply
-                                                Now</a>
-                                        </div>
-
-                                    </div>
-                                    <br/>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

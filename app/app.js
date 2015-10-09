@@ -26,6 +26,7 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
     $scope.globals = Globals;
     $scope.isLoggedIn = false;
     $scope.jobs = [];
+    $scope.jobsMobile = [];
     $scope.ohmel = "sdafadsfadsf";
     $scope.showJobs = false;
 
@@ -33,19 +34,30 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
     mainService.fetchJobs(
         function (success) {
             angular.copy(success.data, $scope.jobs);
-            setTimeout(function(){
-                $('.owl-testimonials').owlCarousel({
-                    singleItem: true,
-                    pagination: true,
-                    autoPlay: true
+            mainService.fetchJobsMobile(
+                function (success) {
+                    angular.copy(success.data, $scope.jobsMobile);
+                    setTimeout(function(){
+                        $('.owl-testimonials').owlCarousel({
+                            singleItem: true,
+                            pagination: true,
+                            autoPlay: true
+                        });
+
+                    },1000);
+                    $scope.showJobs = true;
+                    //$scope.jobs =
+                }, function (error) {
+
                 });
 
-            },1000);
-            $scope.showJobs = true;
+
             //$scope.jobs =
         }, function (error) {
 
         });
+
+
 
 
 
