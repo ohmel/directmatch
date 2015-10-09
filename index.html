@@ -154,21 +154,21 @@
                 </div>
                 <br/>
 
-                <div class="intro-table intro-table-third" style="height: 300px">
+                <div class="intro-table intro-table-third" style="height: 300px" ng-show="showJobs === true">
                     <h4 style=" padding: 2%; color: #ffffff">Our Latest Job Offers</h4>
 
+                    <!--<div class="bottom">-->
                     <div class="owl-testimonials bottom">
-
                         <!--Can add item via div item-->
                         <!--Can add item via div item-->
                         <!--Can add item via div item-->
                         <div class="item" ng-repeat="job in jobs">
                             <div class="row">
                                 <div class="col=md-4 col-lg-4" ng-repeat="detail in job">
-                                    <div>
+                                    <div style="padding-left: 25px; height: 200px">
                                         <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                            <b style="font-size: 15px">
-                                                {{detail.job_title}}<br>
+                                            <h4 style="color: white">{{detail.job_title}}</h4>
+                                            <b style="font-size: 15px; color: white">
                                                 {{detail.job_desc}}
                                             </b>
                                             <br/>
@@ -176,15 +176,15 @@
                                             {{detail.location}}
                                         </p>
                                     </div>
-                                    <div style="text-align: left" class="col-md-offset-1 col-lg-offset-1">
+                                    <div style="text-align: left; padding-left: 25px" class="">
                                         <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
                                            type="submit">Apply Now</a>
                                     </div>
                                     <br/>
                                 </div>
+
                             </div>
                         </div>
-
                     </div>
 
                 </div>
@@ -666,7 +666,10 @@
 <script src="js/wow.min.js"></script>
 <script src="js/typewriter.js"></script>
 <script src="js/jquery.onepagenav.js"></script>
-<script src="js/main.js"></script>
+<div ng-if="jobs.length != 0 ">
+    <script src="js/main.js"></script>
+</div>
+
 
 </body>
 

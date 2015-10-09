@@ -36,11 +36,11 @@ jQuery(function($) {
 			singleItem: true,
 			pagination: true
 		});
-		$('.owl-testimonials').owlCarousel({
-			singleItem: true,
-			pagination: true,
-            autoPlay: true
-		});
+		//$('.owl-testimonials').owlCarousel({
+		//	singleItem: true,
+		//	pagination: true,
+         //   autoPlay: true
+		//});
 		$('.owl-twitter').owlCarousel({
 			singleItem: true,
 			pagination: true
