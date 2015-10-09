@@ -154,7 +154,9 @@
                     </div>
                 </div>
                 <br/>
-
+                <div ng-hide="showJobs === true" class="text-center">
+                    <img src="img/loader.gif" alt="Preloader image">
+                </div>
                 <div class="intro-table intro-table-third" style="height: 300px" ng-show="showJobs === true">
                     <!--<h4 style=" padding: 2%; color: #ffffff">Our Latest Job Offers</h4>-->
 
@@ -182,8 +184,8 @@
                                         </p>
                                     </div>
                                     <div style="text-align: left; padding-left: 25px" class="">
-                                        <a class="btn btn-info btn-xs" style="background-color: #31B9FF"
-                                           type="submit">Apply Now</a>
+                                        <a class="btn btn-info btn-sm" style="background-color: #31B9FF; padding: 5px; font-size: 17px"
+                                           type="submit">View Job</a>
                                     </div>
                                     <br/>
                                 </div>
@@ -268,6 +270,11 @@
     </div>
 </section>
 <div id="blog" style="padding: 140px 0 40px">
+    <style>
+        .owl-controls{
+            margin-top: 10px !important;
+        }
+    </style>
     <section class="section blue-bg">
         <div class="container">
             <div class="owl-twitter owl-carousel col-md-12 col-lg-12">
@@ -305,6 +312,7 @@
                     </div>
                 </div>
                 <div class="item" style="margin: 20px">
+
                     <div class="row">
                         <div class="col-md-4 col-lg-4">
                             <img src="img/blog2.png" class="circular" alt=""/>
@@ -633,7 +641,7 @@
                 or <br/>
                 View our map
                 <!--<a href="" target="_blank" >here</a>-->
-                <a onclick="window.open('http://maps.google.com/maps?&z=17&mrt=loc&t=m&q=14.55644538,121.02571115','name','width=800,height=500')">Here</a>
+                <a style="cursor: pointer" onclick="window.open('http://maps.google.com/maps?&z=17&mrt=loc&t=m&q=14.55644538,121.02571115','name','width=800,height=500')">Here</a>
             </p>
 
             <form action="" class="popup-form">

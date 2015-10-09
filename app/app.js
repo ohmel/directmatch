@@ -43,9 +43,10 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
                             pagination: true,
                             autoPlay: true
                         });
+                        $scope.showJobs = true;
+                        $scope.$apply();
+                    },500);
 
-                    },1000);
-                    $scope.showJobs = true;
                     //$scope.jobs =
                 }, function (error) {
 
