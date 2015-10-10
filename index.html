@@ -53,24 +53,25 @@
     <script src="bower_components/ng-facebook/ngFacebook.js"></script>
     <script src="app/factories/globals.js"></script>
     <script src="app/services/mainService.js"></script>
-    <!--<script>-->
-    <!--var myCenter = new google.maps.LatLng(14.55644538, 121.02571115);-->
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        var myCenter = new google.maps.LatLng(14.55644538, 121.02571115);
 
-    <!--function initialize() {-->
-    <!--var mapProp = {-->
-    <!--center: myCenter,-->
-    <!--zoom: 18,-->
-    <!--mapTypeId: google.maps.MapTypeId.ROADMAP-->
-    <!--};-->
-    <!--var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);-->
-    <!--var marker = new google.maps.Marker({-->
-    <!--position: myCenter-->
-    <!--});-->
-    <!--marker.setMap(map);-->
+        function initialize() {
+            var mapProp = {
+                center: myCenter,
+                zoom: 18,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({
+                position: myCenter
+            });
+            marker.setMap(map);
 
-    <!--}-->
-    <!--google.maps.event.addDomListener(window, 'load', initialize);-->
-    <!--</script>-->
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </head>
 
 <body ng-controller="mainController">
@@ -167,15 +168,16 @@
                                 <div class="col=md-4 col-lg-4" ng-repeat="detail in job">
                                     <div style="padding-left: 25px; height: 250px">
                                         <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                            <h4 style="color: white">{{detail.job_title}}</h4>
-                                            <b style="font-size: 15px; color: white">
-                                                {{detail.job_desc}}
-                                            </b>
-                                            <br/>
-                                            <div style="color: white">
-                                                {{detail.salary_range}} <br/>
-                                                {{detail.location}}
-                                            </div>
+                                        <h4 style="color: white">{{detail.job_title}}</h4>
+                                        <b style="font-size: 15px; color: white">
+                                            {{detail.job_desc}}
+                                        </b>
+                                        <br/>
+
+                                        <div style="color: white">
+                                            {{detail.salary_range}} <br/>
+                                            {{detail.location}}
+                                        </div>
 
                                         </p>
                                     </div>
@@ -229,7 +231,7 @@
 
 
                     </div>
-                    <div class="intro-table intro-table-third"  ng-show="showJobs === true">
+                    <div class="intro-table intro-table-third" ng-show="showJobs === true">
                         <h5 style=" padding: 10%; color: #ffffff; text-align: center">Our Latest Job Offers</h5>
                         <br/>
 
@@ -242,6 +244,7 @@
                                                 {{jm.job_title}} <br/>
                                                 {{jm.job_desc}}<br/>
                                             </b>
+
                                         <div style="color: white">
                                             {{jm.salary_range}} <br/>
                                         </div>
@@ -264,31 +267,83 @@
         </div>
     </div>
 </section>
-<section id="blog" class="section section-padded blue-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="owl-twitter owl-carousel">
-                    <div class="item text-center">
-                        <i class="icon fa fa-twitter"></i>
-                        <h4 class="white light">To enjoy the glow of good health, you must exercise.</h4>
-                        <h4 class="light-white light">#health #training #exercise</h4>
+<div id="blog" style="padding: 140px 0 40px">
+    <section class="section blue-bg">
+        <div class="container">
+            <div class="owl-twitter owl-carousel col-md-12 col-lg-12">
+                <div class="item" style="margin: 20px">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4">
+                            <img src="img/blog2.png" class="circular" alt=""/>
+                        </div>
+                        <div class="item text-left col-md-8 col-lg-8">
+                            <h4 class="white heading">Bring in Your Parents Day 2015: The Year of the Lighthouse
+                                Parent </h4>
+
+                            <div class="row white light">
+                                <div class="col-md-6 col-lg-6">
+                                    Bless Fernandez
+                                </div>
+                                <div class="col-md-6 col-lg-6" style="text-align: right">
+                                    November 9, 2015
+                                </div>
+                            </div>
+                            <div class="row"
+                                 style="border-top: 1px solid #ffffff; margin-top: 10px; border-bottom: 1px solid white">
+                                <p class="white light" style="width: 90%; padding: 15px; color: #ffffff">
+                                    You’ve heard of tiger moms. Free-range parents. Helicopter dads.
+                                    But there’s more to parenting than the extremes—and our latest
+                                    research discovered that many young adults want more involvement
+                                    than they’re getting when it comes to their career. As LinkedIn’s
+                                    Bring in Your Parents Day approaches, I’ve found myself thinking
+                                    about all the ways in which my parents supported me growing up.
+                                    I was lucky that they provided me with countless words of wisdom
+                                    as I journeyed through…
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item text-center">
-                        <i class="icon fa fa-twitter"></i>
-                        <h4 class="white light">To enjoy the glow of good health, you must exercise.</h4>
-                        <h4 class="light-white light">#health #training #exercise</h4>
-                    </div>
-                    <div class="item text-center">
-                        <i class="icon fa fa-twitter"></i>
-                        <h4 class="white light">To enjoy the glow of good health, you must exercise.</h4>
-                        <h4 class="light-white light">#health #training #exercise</h4>
+                </div>
+                <div class="item" style="margin: 20px">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4">
+                            <img src="img/blog2.png" class="circular" alt=""/>
+                        </div>
+                        <div class="item text-left col-md-8 col-lg-8">
+                            <h4 class="white heading">Bring in Your Parents Day 2015: The Year of the Lighthouse
+                                Parent </h4>
+
+                            <div class="row white light">
+                                <div class="col-md-6 col-lg-6">
+                                    Bless Fernandez
+                                </div>
+                                <div class="col-md-6 col-lg-6" style="text-align: right">
+                                    November 9, 2015
+                                </div>
+                            </div>
+                            <div class="row"
+                                 style="border-top: 1px solid #ffffff; margin-top: 10px; border-bottom: 1px solid white">
+                                <p class="white light" style="width: 90%; padding: 15px; color: #ffffff">
+                                    You’ve heard of tiger moms. Free-range parents. Helicopter dads.
+                                    But there’s more to parenting than the extremes—and our latest
+                                    research discovered that many young adults want more involvement
+                                    than they’re getting when it comes to their career. As LinkedIn’s
+                                    Bring in Your Parents Day approaches, I’ve found myself thinking
+                                    about all the ways in which my parents supported me growing up.
+                                    I was lucky that they provided me with countless words of wisdom
+                                    as I journeyed through…
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
+
+
+</div>
 
 <div class="container">
     <div class="row services">
