@@ -175,11 +175,9 @@
                                         <b style="font-size: 15px; color: white">
                                             {{detail.job_desc}}
                                         </b>
-                                        <br/>
 
-                                        <div style="color: white">
-                                            {{detail.salary_range}} <br/>
-                                            {{detail.location}}
+                                        <div style="color: white; margin-top: 10px">
+                                            Salary Range: {{detail.salary_range}} <br/>
                                         </div>
 
                                         </p>
@@ -238,7 +236,7 @@
 
                     </div>
                     <div class="intro-table intro-table-third" ng-show="showJobs === true">
-                        <h5 style=" padding: 10%; color: #ffffff; text-align: center">Our Latest Job Offers</h5>
+                        <h5 style=" padding: 10%; color: #ffffff; text-align: center; font-size: 17px">Our Latest Job Offers</h5>
                         <br/>
 
                         <div class="owl-testimonials bottom">
@@ -247,18 +245,18 @@
                                     <div>
                                         <p class="white heading light" style="font-size: 12px; color: #ffffff">
                                             <b style="font-size: 15px">
-                                                {{jm.job_title}} <br/>
-                                                {{jm.job_desc}}<br/>
-                                            </b>
+                                                <span style="font-size: 15px;">{{jm.job_title}}</span><br/>
 
-                                        <div style="color: white">
-                                            {{jm.salary_range}} <br/>
-                                        </div>
+                                            </b>
+                                            {{jm.job_desc}}
+                                            <div style="color: white; padding-left: 30px">
+                                                {{jm.salary_range}} <br/>
+                                            </div>
                                         </p>
 
                                         <div style="padding-left: 30px">
-                                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF;"></a>
-                                            <a href="" target="_blank">here</a>
+                                            <a class="btn btn-info btn-xs"
+                                               style="background-color: #31B9FF; coloor: white">View Job</a>
                                         </div>
 
                                     </div>
@@ -279,7 +277,7 @@
             margin-top: 5px !important;
         }
     </style>
-    <section class="blue-bg hidden-xs hidden-sm">
+    <section class="blue-bg hidden-xs hidden-sm" ng-show="showBlogs === true">
         <div class="row">
             <div class="col-md-12 col-lg-12" style="background-color: #003399; fill-opacity: 5">
                 <h3 style="text-align: center; color: white;">
@@ -295,7 +293,8 @@
                 <div class="item" style="margin: 20px" ng-repeat="blog in blogs">
                     <div class="row">
                         <div class="col-md-3 col-lg-3" style="padding: 2% 5% 2% 6%">
-                            <img src="img/blog2.png" class="circular" alt=""/>
+                            <img src="{{globals.remoteRootUrl}}uploads/blogs/{{blog.blog_id}}/{{blog.blogPic}}"
+                                 class="circular" alt=""/>
                             <br/>
                             <br/>
                             <a class="btn btn-info btn-xs" style="background-color: #31B9FF">View Blogs</a>
@@ -305,24 +304,17 @@
 
                             <div class="row white light">
                                 <div class="col-md-6 col-lg-6">
-                                    Bless Fernandez
+                                    {{blog.user_fullname}}
                                 </div>
                                 <div class="col-md-6 col-lg-6" style="text-align: right">
-                                    November 9, 2015
+                                    {{blog.date_posted}}
                                 </div>
                             </div>
                             <div class="row"
                                  style="border-top: 1px solid #ffffff; margin-top: 10px; border-bottom: 1px solid white">
                                 <p class="white light"
                                    style="width: 90%; padding: 15px; color: #ffffff; font-size: 15px">
-                                    You’ve heard of tiger moms. Free-range parents. Helicopter dads.
-                                    But there’s more to parenting than the extremes—and our latest
-                                    research discovered that many young adults want more involvement
-                                    than they’re getting when it comes to their career. As LinkedIn’s
-                                    Bring in Your Parents Day approaches, I’ve found myself thinking
-                                    about all the ways in which my parents supported me growing up.
-                                    I was lucky that they provided me with countless words of wisdom
-                                    as I journeyed through…
+                                    {{blog.blog_desc}}
                                 </p>
                             </div>
                         </div>
@@ -691,7 +683,7 @@
 <script src="js/typewriter.js"></script>
 <script src="js/jquery.onepagenav.js"></script>
 <!--<div ng-if="jobs.length != 0 ">-->
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 <!--</div>-->
 
 

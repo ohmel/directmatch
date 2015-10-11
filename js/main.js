@@ -41,10 +41,10 @@ jQuery(function($) {
 		//	pagination: true,
          //   autoPlay: true
 		//});
-		$('.owl-twitter').owlCarousel({
-			singleItem: true,
-			pagination: true
-		});
+		//$('.owl-twitter').owlCarousel({
+		//	singleItem: true,
+		//	pagination: true
+		//});
 
 		// Navbar Init
 		$('nav').addClass('original').clone().insertAfter('nav').addClass('navbar-fixed-top').css('position', 'fixed').css('top', '0').css('margin-top', '0').removeClass('original');

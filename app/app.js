@@ -29,6 +29,7 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
     $scope.jobs = [];
     $scope.jobsMobile = [];
     $scope.showJobs = false;
+    $scope.showBlogs = false;
 
 
     mainService.fetchJobs(
@@ -60,7 +61,16 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
 
     mainService.fetchBlogs(
         function (success){
-            $scope.blogs = success.data;
+            angular.copy(success.data, $scope.blogs);
+            setTimeout(function(){
+                $('.owl-twitter').owlCarousel({
+                    singleItem: true,
+                    pagination: true,
+                    autoPlay: true
+                });
+                $scope.showBlogs = true;
+                $scope.$apply();
+            },500);
         }, function (error){
 
         });
