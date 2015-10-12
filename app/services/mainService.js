@@ -38,9 +38,20 @@ dmApp.service('mainService', function ($http, Globals) {
         }).success(callback).error(errback);
     };
 
+    var getBlog = function (callback, errback, blogId){
+        $http({
+            method: 'GET',
+            url: url + 'blog/getBlog',
+            params: {
+                blogId: blogId
+            }
+        }).success(callback).error(errback);
+    };
+
     return {
         fetchJobs: fetchJobs,
         fetchBlogs: fetchBlogs,
+        getBlog: getBlog,
         fetchJobsMobile: fetchJobsMobile
     };
 });

@@ -74,9 +74,9 @@
     <!--</script>-->
 </head>
 
-<body ng-controller="mainController">
+<body ng-controller="blogController">
 <div class="preloader">
-    <img src="img/loader.gif" alt="Preloader image" %">
+    <img src="img/loader.gif" alt="Preloader image">
 </div>
 
 <nav class="navbar col-md-12 col-sm-4">
@@ -123,7 +123,7 @@
                     </h3>
                 </div>
                 <div class="col-md-11 col-lg-11 hidden-xs hidden-sm">
-                    <h4 style="color: #ffffff"></h4>
+                    <h4 style="color: #ffffff">Blog</h4>
                 </div>
             </div>
         </div>
@@ -139,33 +139,28 @@
                                     <div class="row"
                                          style="border-bottom: solid 1px lightgray; margin-bottom: 10px; margin-top: 10px">
                                         <div class="col-md-2 col-lg-2 hidden-xs hidden-sm" style="padding: 10px">
-                                            <img src="img/blog2.png" alt="" class="circular"/>
+                                            <img src="{{globals.remoteRootUrl}}/uploads/blogs/{{blog.blog_id}}/{{blog.blogPic}}" alt="" class="circular"/>
                                         </div>
                                         <div class="col-md-10 col-lg-10 hidden-xs hidden-sm">
                                             <div>
                                                 <a href="link">
-                                                    <h4>We are looking for awesome graphic artist with inverted
-                                                        body
-                                                        clock</h4>
+                                                    <h4>{{blog.blog_title}}</h4>
                                                 </a>
                                                 <p style="font-size: 12px">
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
+                                                    {{blog.blog_desc}}
                                                 </p>
                                             </div>
                                             <div>
                                                 <div style="font-size: 15px">
                                                     <i class="fa fa-user" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            Andrea Amor
+                                                            {{blog.user_fullname}}
                                                         </a>
                                                     </i>
                                                     <br/>
                                                     <i class="fa fa-times-circle-o" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            October 12, 2015
+                                                            {{blog.date_posted}}
                                                         </a>
                                                     </i>
                                                 </div>
@@ -173,30 +168,7 @@
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top: 20px; margin-bottom: 20px">
-                                        <img src="img/banner_jobs_01.jpg" alt="" style="width: 100%"/>
-
-                                        <div style="color: dimgray; margin-top: 10px">
-                                            <ul>
-                                                <li>
-                                                    Degree (Preferably in Accountancy & CPA Certified)
-                                                </li>
-                                                <li>
-                                                    Preparing financial statements, business plans, commentaries and
-                                                    budgets for management or
-                                                    client reports;
-                                                </li>
-                                                <li> Regularly undertaking audits, involving the examination of the
-                                                    organization's accounts,
-                                                </li>
-                                                <li>Regularly undertaking audits, involving the examination of the
-                                                    organization's accounts,
-                                                </li>
-                                                <li>Analyzing risk, inspecting the organization's current practices,
-                                                    Investigating any financial
-                                                    irregularities and recommending improvements;
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        <div ng-bind-html="blog.blog_body | to_trusted" style="padding-left: 20px; padding-right: 20px"></div>
                                     </div>
                                 </div>
                             </div>

@@ -31,10 +31,6 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
     $scope.showJobs = false;
     $scope.showBlogs = false;
 
-    $scope.viewBlog = function(blogId){
-        $rootScope.blogId = blogId;
-        $location.absUrl(Globals.rootUrl+'/blog.html#!/blog/'+blogId);
-    }
 
     mainService.fetchJobs(
         function (success) {
@@ -86,8 +82,12 @@ dmApp.controller('blogController', function ($location, $scope, Globals, ngDialo
     $scope.globals = Globals;
     $scope.isLoggedIn = false;
     $scope.blogs = [];
+    $scope.blog = {};
     //$scope.route = $route.current.params;
     $scope.showBlogs = false;
+    var location = $location.path();
+    $scope.blogId = location.replace("/", "");
+
 
     mainService.fetchBlogs(
         function (success){
@@ -95,5 +95,13 @@ dmApp.controller('blogController', function ($location, $scope, Globals, ngDialo
         }, function (error){
 
         });
+
+    mainService.getBlog(
+        function(success){
+            $scope.blog = success.data
+        }, function(error){
+
+        }, $scope.blogId
+    )
 });
 // create the controller and inject Angular's $scope
