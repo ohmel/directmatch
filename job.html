@@ -53,25 +53,6 @@
     <script src="bower_components/ng-facebook/ngFacebook.js"></script>
     <script src="app/factories/globals.js"></script>
     <script src="app/services/mainService.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <script>
-        var myCenter = new google.maps.LatLng(14.55644538, 121.02571115);
-
-        function initialize() {
-            var mapProp = {
-                center: myCenter,
-                zoom: 18,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-            var marker = new google.maps.Marker({
-                position: myCenter
-            });
-            marker.setMap(map);
-
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
 </head>
 
 <body ng-controller="mainController">
@@ -140,9 +121,9 @@
                                          style="border-bottom: solid 1px lightgray; padding-bottom: 10px; padding-top: 10px">
                                         <div class="col-md-9 col-lg-9 hidden-sm hidden-xs">
                                             <div>
-                                                <h4>{{job.job_title}}</h4>
+                                                <h3>{{job.job_title}}</h3>
 
-                                                <p style="font-size: 12px">
+                                                <p style="font-size: 14px">
                                                     {{job.job_desc}}
                                                 </p>
                                             </div>
