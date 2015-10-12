@@ -796,6 +796,14 @@ footer .social-footer li:hover a {
 	color: #fff;
 }
 
+.modal-popup a.close-link2 {
+	font-size: 22px;
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	color: #fff;
+}
+
 .popup-form {
 	width: 90%;
 	max-width: 375px;
@@ -1109,6 +1117,10 @@ footer .social-footer li:hover a {
 		padding-top: 0;
 	}
 }
+
+/*<ace css>*/
+/*<ace css>*/
+/*<ace css>*/
 .circular {
     width: 150px;
     height: 150px;
@@ -1117,7 +1129,3 @@ footer .social-footer li:hover a {
     -moz-border-radius: 150px;
     background: url(http://link-to-your/image.jpg) no-repeat;
 }
-
-
-
-

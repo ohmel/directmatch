@@ -53,6 +53,7 @@
     <script src="bower_components/ng-facebook/ngFacebook.js"></script>
     <script src="app/factories/globals.js"></script>
     <script src="app/services/mainService.js"></script>
+    <!--<script src="http://maps.googleapis.com/maps/api/js"></script>-->
     <!--<script>-->
     <!--var myCenter = new google.maps.LatLng(14.55644538, 121.02571115);-->
 
@@ -78,7 +79,7 @@
     <img src="img/loader.gif" alt="Preloader image">
 </div>
 
-<nav class="navbar col-md-12 col-sm-4">
+<nav class="navbar col-md-12 col-lg-4 hidden-sm hidden-xs">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -108,22 +109,326 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-<header id="intro">
+<section class="section section-padded">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 hidden-xs hidden-sm" style="background-color: #1967a9">
+            <div class="row">
+                <div class="col-md-1 col-lg-1 col-xs-1 col-sm-1">
+                    <h3>
+                        <a href="jobList.html" class="fa fa-arrow-circle-left"
+                           style="padding-left: 30px; color: white"></a>
+                    </h3>
+                </div>
+                <div class="col-md-11 col-lg-11 col-xs-11 col-sm-11" style="padding-top: 5px">
+                    <h4 style="color: #ffffff">Job Information</h4>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
-        <div class="table">
-            <div class="header-text">
+        <div class="col-md-12 col-sm-12 hidden-sm hidden-xs">
+            <div style="background-color: #ffffff;">
                 <div class="row">
-                    <div class="col-md-12 col-sm-4 text-center">
-                        <h4 class="blue">Are you looking for a Job?</h4>
+                    <div class="col-md-12 hidden-sm hidden-xs">
+                        <div class="col-md-10 col-lg-10 hidden-sm hidden-xs">
+                            <div class="row" style="padding: 0px 0px 0px">
+                                <div class="col-md-12 hidden-sm hidden-xs">
+                                    <div class="row"
+                                         style="border-bottom: solid 1px lightgray; padding-bottom: 10px; padding-top: 10px">
+                                        <div class="col-md-9 col-lg-9 hidden-sm hidden-xs">
+                                            <div>
+                                                <h4>Technical Support Representatives Needed – 18K+ Salary, Urgent
+                                                    Requirement</h4>
 
-                        <h2 class="blue typed">We can help you!</h2>
-                        <span class="typed-cursor">|</span>
+                                                <p style="font-size: 12px">
+                                                    This is your job description, with
+                                                    awesome words and fabulous lovely description
+                                                    This is your job description, with
+                                                    awesome words and fabulous lovely description
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 hidden-sm hidden-xs">
+                                            <i class="fa fa-clock-o"
+                                               style="color: dimgray; padding-bottom: 15px">
+                                                <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
+                                                    Oct 10, 2015
+                                                </a>
+                                            </i>
+
+                                            <div>
+                                                <div style="font-size: 15px">
+                                                    <i class="fa fa-building-o" style="color: dimgray">
+                                                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
+                                                            Direct Match Outsourcing.inc
+                                                        </a>
+                                                    </i>
+                                                    <br/>
+                                                    <i class="fa fa-location-arrow" style="color: dimgray">
+                                                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
+                                                            Manila. Metro Manila
+                                                        </a>
+                                                    </i>
+                                                    <br/>
+                                                    <i class="fa fa-money" style="color: dimgray">
+                                                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
+                                                            Php 10,000- Php 20,000
+                                                        </a>
+                                                    </i>
+                                                    <br/>
+                                                    <i class="fa fa-info-circle" style="color: dimgray">
+                                                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
+                                                            CSR
+                                                        </a>
+                                                    </i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="color: dimgray">
+                                        <div>
+                                            <a href="#" data-toggle="modal" data-target="#modal2" class="btn btn-blue">
+                                                <b
+                                                        style="color: #ffffff">Apply here</b></a>
+                                            <a href="#" class="btn btn-blue"><b
+                                                    style="color: #ffffff">Linked</b>
+                                                <b class="fa fa-linkedin-square">
+                                                </b></a>
+                                            <a href="#" data-toggle="modal" data-target="#modal2" class="btn btn-blue">
+                                                <b style="color: #ffffff" class="fa fa-facebook-square"></b>
+                                                <b>
+                                                    Facebook
+                                                </b>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--ADVERTISEMENT!!!-->
+                        <!--ADVERTISEMENT!!!-->
+                        <!--ADVERTISEMENT!!!-->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</header>
+    </div>
+</section>
+<section class="section section-padded">
+    <div class="col-md-2 col-lg-2 hidden-xs hidden-sm"
+         style="background-color: white;
+                                         text-align: center">
+        <div style="border: 1px solid whitesmoke">
+            <img src="img/hp%20logo.png"
+                 style="height: 100px; width: 100px" alt=""/>
+            <h5 style="color: #1967A9">
+                Hewlett-Packard
+            </h5>
+
+            <p style="font-size: 10px; color: dimgray; padding: 5px; text-align: left">
+                Learn about HP printers, laptops, desktops, storage solutions, cloud solutions,
+                servers, enterprise services, solutions and more at the Official HP® Website.
+            </p>
+        </div>
+        <br/>
+
+        <div style="border: 1px solid whitesmoke">
+            <img src="img/hp%20logo.png"
+                 style="height: 100px; width: 100px; padding: 10px" alt=""/>
+            <h5 style="color: #1967A9">
+                Hewlett-Packard
+            </h5>
+
+            <p style="font-size: 10px; color: dimgray; padding: 5px; text-align: left">
+                Learn about HP printers, laptops, desktops, storage solutions, cloud solutions,
+                servers, enterprise services, solutions and more at the Official HP® Website.
+            </p>
+        </div>
+        <br/>
+
+        <div style="border: 1px solid whitesmoke">
+            <img src="img/hp%20logo.png"
+                 style="height: 100px; width: 100px; padding: 10px" alt=""/>
+            <h5 style="color: #1967A9">
+                Hewlett-Packard
+            </h5>
+
+            <p style="font-size: 10px; color: dimgray; padding: 5px; text-align: left">
+                Learn about HP printers, laptops, desktops, storage solutions, cloud solutions,
+                servers, enterprise services, solutions and more at the Official HP® Website.
+            </p>
+        </div>
+    </div>
+</section>
+<!--mobile ui-->
+<!--mobile ui-->
+<!--mobile ui-->
+<!--mobile ui-->
+<!--mobile ui-->
+
+<section class="section section padded hidden-md hidden-lg" style="padding-top: 80px">
+    <div class="col-xs-12 col-sm-12 hidden-lg hidden-md" style="background-color: #1967A9; padding: 10px">
+        <div>
+            <a href="jobList.html"><i class="fa fa-arrow-circle-left" style="font-size: 30px; color: #ffffff"></i>
+                &nbsp; <b style="color: #ffffff; font-size: 20px">
+                    Job Information
+                </b></a>
+        </div>
+    </div>
+    <div class="row hidden-md hidden-lg"
+         style="padding-bottom: 0px; padding-top: 10px">
+        <div style="padding-left: 30px; padding-right: 30px; padding-bottom: 0px; padding-top: 20px; margin-top: 20px">
+            <div style="border-bottom: 1px solid dimgray">
+                <div>
+                    <h5>Technical Support Representatives Needed – 18K+ Salary, Urgent
+                        Requirement</h5>
+
+                    <p style="font-size: 12px">
+                        This is your job description, with
+                        awesome words and fabulous lovely description
+                        This is your job description, with
+                        awesome words and fabulous lovely description
+                    </p>
+                </div>
+                <div>
+                    <i class="fa fa-clock-o" style="color: dimgray">
+                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
+                            October 11, 2015
+                        </a>
+                    </i>
+                    <br/>
+                    <i class="fa fa-building-o" style="color: dimgray">
+                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
+                            Direct Match Outsourcing.inc
+                        </a>
+                    </i>
+                    <br/>
+                    <i class="fa fa-location-arrow" style="color: dimgray">
+                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
+                            Manila. Metro Manila
+                        </a>
+                    </i>
+                    <br/>
+                    <i class="fa fa-money" style="color: dimgray">
+                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
+                            Php 10,000- Php 20,000
+                        </a>
+                    </i>
+                    <br/>
+                    <i class="fa fa-info-circle" style="color: dimgray">
+                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
+                            CSR
+                        </a>
+                    </i>
+                </div>
+            </div>
+            <div style="color: dimgray">
+                <!--insert tinycme here-->
+                <div style="font-size: 12px; color: dimgray; margin-top: 10px">
+                    <img src="img/banner_jobs_01.jpg" alt="" style="width: 100%"/>
+                    <ul>
+                        <li>
+                            Degree (Preferably in Accountancy & CPA Certified)
+                        </li>
+                        <li>
+                            Preparing financial statements, business plans, commentaries and budgets for management or
+                            client reports;
+                        </li>
+                        <li> Regularly undertaking audits, involving the examination of the organization's accounts,
+                        </li>
+                        <li>Regularly undertaking audits, involving the examination of the organization's accounts,</li>
+                        <li>Analyzing risk, inspecting the organization's current practices, Investigating any financial
+                            irregularities and recommending improvements;
+                        </li>
+                    </ul>
+                </div>
+                <div style="text-align: center">
+                    <span style="text-align: left; display: inline">
+                 <a href="#" data-toggle="modal" data-target="#modal2" style="background-color: #1967A9; padding: 5px">
+                     <b style="color: #ffffff">Apply here</b></a>
+                 </span>
+                    or
+                 <span style="text-align: left; display: inline">
+                    <a href="#" style="background-color: #1967A9; padding: 5px">
+                        <b style="color: #ffffff">Apply via</b>
+                        <i class="fa fa-linkedin-square" style="color: #ffffff; font-size: 15px"></i>
+                    </a>
+               </span>
+                    &nbsp;
+                    <span style="text-align: left; display: inline">
+                      <a href="#" style="background-color: #1967A9; padding: 5px">
+                          <b style="color: #ffffff">Apply via</b>
+                          <i class="fa fa-facebook-square" style="color: #ffffff; font-size: 15px"></i>
+                      </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Advertisements-->
+
+<!--Advertisements-->
+
+<!--Advertisements-->
+
+<!--Advertisements-->
+
+<!--Advertisements-->
+<section>
+    <div class="col-sm-12 col-xs-12 hidden-md hidden-lg"
+         style="background-color: white;
+         text-align: center;
+         padding-left: 5px;
+         padding-right: 5px;
+         padding-bottom: 2px;
+         margin-bottom: 10px">
+        <div class="row">
+            <div style="border: 1px solid whitesmoke;" class="col-sm-4 col-xs-4 hidden-md hidden-lg">
+                <img src="img/hp%20logo.png"
+                     style="width: 100%" alt=""/>
+                <b style="color: #1967A9; font-size: 10px">
+                    Hewlett-Packard
+                    <b>
+                        <p style="font-size:7px; color: dimgray; text-align: left; padding-left: 5px">
+                            Learn about HP printers, laptops, desktops, storage solutions, cloud solutions, servers,
+                            enterprise services, solutions and more at the Official HP® Website.
+                        </p>
+                    </b>
+                </b>
+            </div>
+            <div style="border: 1px solid whitesmoke;" class="col-sm-4 col-xs-4 hidden-md hidden-lg">
+                <img src="img/hp%20logo.png"
+                     style="width: 100%" alt=""/>
+                <b style="color: #1967A9; font-size: 10px">
+                    Hewlett-Packard
+                    <b>
+                        <p style="font-size: 7px; color: dimgray; text-align: left; padding-left: 5px">
+                            Learn about HP printers, laptops, desktops, storage solutions, cloud solutions, servers,
+                            enterprise services, solutions and more at the Official HP® Website.
+                        </p>
+                    </b>
+                </b>
+            </div>
+            <div style="border: 1px solid whitesmoke;" class="col-sm-4 col-xs-4 hidden-md hidden-lg">
+                <img src="img/hp%20logo.png"
+                     style="width: 100%" alt=""/>
+                <b style="color: #1967A9; font-size: 10px">
+                    Hewlett-Packard
+                    <b>
+                        <p style="font-size: 7px; color: dimgray; text-align: left; padding-left: 5px">
+                            Learn about HP printers, laptops, desktops, storage solutions, cloud solutions, servers,
+                            enterprise services, solutions and more at the Official HP® Website.
+                        </p>
+                    </b>
+                </b>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content modal-popup">
@@ -168,6 +473,43 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-popup">
+            <a href="#" class="close-link2"><i class="icon_close_alt2"></i>
+            </a>
+
+            <h3 class="white">Apply Here</h3>
+
+            <p style="font-size: 12px; color: #ffffff; text-align: center;">
+                You may contact us at our landline, <br/>
+                (02) 893-1610 | 0917-527-8926 | 0917-527-9750 <br/>
+                or <br/>
+                View our map
+                <!--<a href="" target="_blank" >here</a>-->
+                <a onclick="window.open('http://maps.google.com/maps?&z=17&mrt=loc&t=m&q=14.55644538,121.02571115','name','width=800,height=500')"
+                   style="cursor: pointer">Here</a>
+            </p>
+
+            <form action="" class="popup-form">
+                <input type="text" class="form-control form-white" placeholder="First Name">
+                <input type="text" class="form-control form-white" placeholder="Last Name">
+                <input type="email" class="form-control form-white" placeholder="Email Address">
+                <input type="text" class="form-control form-white" placeholder="Contact Number">
+
+                <p style="font-size: 12px; color: #ffffff; text-align: center;">
+                    Attach your CV here. (Must be PDF format)
+                </p>
+                <input type="file" class="file form-control form-white"/>
+                <button type="submit" class="btn btn-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--<section class="section" style="padding: 30px">-->
+<!--<div id="googleMap" style="height: 350px; width: auto"></div>-->
+<!--</section>-->
 <footer>
     <div class="container">
         <ul class="social-footer col-md-12 col-lg-12" style="text-align: center">
@@ -207,14 +549,14 @@
 </div>
 <!-- Scripts -->
 <script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
+<!--<script src="js/owl.carousel.min.js"></script>-->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/wow.min.js"></script>
-<script src="js/typewriter.js"></script>
-<script src="js/jquery.onepagenav.js"></script>
-<div ng-if="jobs.length != 0 ">
+<!--<script src="js/typewriter.js"></script>-->
+<!--<script src="js/jquery.onepagenav.js"></script>-->
+<!--<div ng-if="jobs.length != 0 ">-->
     <script src="js/main.js"></script>
-</div>
+<!--</div>-->
 
 
 </body>

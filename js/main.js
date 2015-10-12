@@ -164,7 +164,12 @@ jQuery(function($) {
 	$('.modal-popup .close-link').click(function(event){
 		event.preventDefault();
 		$('#modal1').modal('hide');
-	});
+	})
+
+    $('.modal-popup .close-link2').click(function(event){
+        event.preventDefault();
+        $('#modal2').modal('hide');
+    });
 
 	$(window).on("resize", function() {
 		$('.modal:visible').each(centerModal);
