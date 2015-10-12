@@ -157,7 +157,7 @@
                                     </div>
                                     <div style="color: dimgray">
                                         <div>
-                                            <a href="#" data-toggle="modal" data-target="#modal2" class="btn btn-blue">
+                                            <a href="#/{{jobId}}" data-toggle="modal" data-target="#modal2" class="btn btn-blue">
                                                 <b
                                                         style="color: #ffffff">Apply here</b></a>
                                             <a href="#" class="btn btn-blue"><b
@@ -316,7 +316,7 @@
                 <div class="wrapperline">
                     <div class="boxinside"
                          style="text-align: left; background-color: #1967A9">
-                        <a href="#" data-toggle="modal" data-target="#modal2"
+                        <a href="#/{{jobId}}" data-toggle="modal" data-target="#modal2"
                            style="background-color: #1967A9">
                             <b style="color: #ffffff">Apply here</b></a>
                     </div>
@@ -464,16 +464,19 @@
                    style="cursor: pointer">Here</a>
             </p>
 
-            <form action="" class="popup-form">
-                <input type="text" class="form-control form-white" placeholder="First Name">
-                <input type="text" class="form-control form-white" placeholder="Last Name">
-                <input type="email" class="form-control form-white" placeholder="Email Address">
-                <input type="text" class="form-control form-white" placeholder="Contact Number">
+            <form action="{{urlSubmit}}" method="post" class="popup-form" novalidate enctype="multipart/form-data">
+                <input type="text" name="firstName" class="form-control form-white" placeholder="First Name">
+                <input type="text" name="lastName" class="form-control form-white" placeholder="Last Name">
+                <input type="text" name="middleName" class="form-control form-white" placeholder="Middle Name">
+                <input type="email" name="email" class="form-control form-white" placeholder="Email Address">
+                <input type="text" name="mobile" class="form-control form-white" placeholder="Mobile Number">
+                <input type="text" name="telephone" class="form-control form-white" placeholder="Telephone Number">
+                <textarea name="remarks" id="" cols="30" rows="4" class="form-control form-white" placeholder="Do you want to say something?"></textarea>
 
                 <p style="font-size: 12px; color: #ffffff; text-align: center;">
                     Attach your CV here. (Must be PDF format)
                 </p>
-                <input type="file" class="file form-control form-white"/>
+                <input type="file" name="cv" class="file form-control form-white"/>
                 <button type="submit" class="btn btn-submit">Submit</button>
             </form>
         </div>

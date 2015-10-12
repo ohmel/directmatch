@@ -15,6 +15,7 @@ dmApp.factory('Globals', function($location, $http) {
     }
     rootUrl = 'http://'+host;
     var remoteRootUrl = 'http://'+$location.host()+'/cms/';
+    var remoteRootUrl2 = 'http://'+$location.host()+'/cms';
     var isNothing = function (obj) {
         // null and undefined are "empty"
         if (obj == null) return true;
@@ -40,6 +41,7 @@ dmApp.factory('Globals', function($location, $http) {
   return {
       rootUrl : rootUrl,
       remoteRootUrl : remoteRootUrl,
+      remoteRootUrl2 : remoteRootUrl2,
       isNothing : isNothing
   };
 });

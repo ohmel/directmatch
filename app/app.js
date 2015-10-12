@@ -31,6 +31,7 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
     $scope.jobsMobile = [];
     $scope.showJobs = false;
     $scope.showBlogs = false;
+    $scope.urlSubmit = Globals.remoteRootUrl2+"/index.php/job/apply";
     var location = $location.path();
     $scope.jobId = location.replace("/", "");
 
