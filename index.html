@@ -292,7 +292,7 @@
         </div>
         <div class="container">
             <div class="owl-twitter owl-carousel col-md-12 col-lg-12">
-                <div class="item" style="margin: 20px">
+                <div class="item" style="margin: 20px" ng-repeat="blog in blogs">
                     <div class="row">
                         <div class="col-md-3 col-lg-3" style="padding: 2% 5% 2% 6%">
                             <img src="img/blog2.png" class="circular" alt=""/>
@@ -301,9 +301,7 @@
                             <a class="btn btn-info btn-xs" style="background-color: #31B9FF">View Blogs</a>
                         </div>
                         <div class="item text-left col-md-8 col-lg-8">
-                            <h4 class="white heading" style="cursor: pointer">
-                                Bring in Your Parents Day 2015: The Year of the Lighthouse
-                                Parent </h4>
+                            <h4 class="white heading" style="cursor: pointer">{{blog.blog_title}} </h4>
 
                             <div class="row white light">
                                 <div class="col-md-6 col-lg-6">
@@ -330,44 +328,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item" style="margin: 20px">
-                    <div class="row">
-                        <div class="col-md-3 col-lg-3" style="padding: 2% 5% 2% 6%">
-                            <img src="img/blog2.png" class="circular" alt=""/>
-                            <br/>
-                            <br/>
-                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF">View Blogs</a>
-                        </div>
-                        <div class="item text-left col-md-8 col-lg-8">
-                            <h4 class="white heading" style="cursor: pointer">
-                                Bring in Your Parents Day 2015: The Year of the Lighthouse
-                                Parent </h4>
 
-                            <div class="row white light">
-                                <div class="col-md-6 col-lg-6">
-                                    Bless Fernandez
-                                </div>
-                                <div class="col-md-6 col-lg-6" style="text-align: right">
-                                    November 9, 2015
-                                </div>
-                            </div>
-                            <div class="row"
-                                 style="border-top: 1px solid #ffffff; margin-top: 10px; border-bottom: 1px solid white">
-                                <p class="white light"
-                                   style="width: 90%; padding: 15px; color: #ffffff; font-size: 15px">
-                                    You’ve heard of tiger moms. Free-range parents. Helicopter dads.
-                                    But there’s more to parenting than the extremes—and our latest
-                                    research discovered that many young adults want more involvement
-                                    than they’re getting when it comes to their career. As LinkedIn’s
-                                    Bring in Your Parents Day approaches, I’ve found myself thinking
-                                    about all the ways in which my parents supported me growing up.
-                                    I was lucky that they provided me with countless words of wisdom
-                                    as I journeyed through…
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
     </section>
 </div>

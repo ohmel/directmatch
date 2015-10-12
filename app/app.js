@@ -25,9 +25,9 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
     // create a message to display in our view
     $scope.globals = Globals;
     $scope.isLoggedIn = false;
+    $scope.blogs = [];
     $scope.jobs = [];
     $scope.jobsMobile = [];
-    $scope.ohmel = "sdafadsfadsf";
     $scope.showJobs = false;
 
 
@@ -55,6 +55,13 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
 
             //$scope.jobs =
         }, function (error) {
+
+        });
+
+    mainService.fetchBlogs(
+        function (success){
+            $scope.blogs = success.data;
+        }, function (error){
 
         });
 

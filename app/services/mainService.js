@@ -27,6 +27,13 @@ dmApp.service('mainService', function ($http, Globals) {
         }).success(callback).error(errback);
     };
 
+    var fetchBlogs = function (callback, errback){
+        $http({
+            method: 'GET',
+            url: url + 'blog/fetchBlogs'
+        }).success(callback).error(errback);
+    };
+
     return {
         fetchJobs: fetchJobs,
         fetchJobsMobile: fetchJobsMobile
