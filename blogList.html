@@ -124,74 +124,32 @@
                                     <!--Job list-->
                                     <!--Job list-->
                                     <!--Job list-->
-                                    <div class="row"
+                                    <div class="row" ng-repeat="blog in blogs"
                                          style="border-bottom: solid 1px lightgray; margin-bottom: 10px; margin-top: 10px">
                                         <div class="col-mimgd-2 col-lg-2 hidden-xs hidden-sm" style="padding: 10px">
-                                            <img src="img/blog2.png" alt="" class="circular"/>
+                                            <img src="{{globals.remoteRootUrl}}uploads/blogs/{{blog.blog_id}}/{{blog.blogPic}}" alt="" class="circular"/>
                                         </div>
                                         <div class="col-md-10 col-lg-10 hidden-xs hidden-sm">
                                             <div>
-                                                <a href="blog.html">
-                                                    <h4>We are looking for awesome graphic artist with inverted
-                                                        body
-                                                        clock</h4>
+                                                <a href="blog.html#/{{blog.blog_id}}">
+                                                    <h4>{{blog.blog_title}}</h4>
                                                 </a>
 
                                                 <p style="font-size: 12px">
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
+                                                    {{blog.blog_desc}}
                                                 </p>
                                             </div>
                                             <div>
                                                 <div style="font-size: 15px">
                                                     <i class="fa fa-user" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            Andrea Amor
+                                                            {{blog.user_fullname}}
                                                         </a>
                                                     </i>
                                                     <br/>
                                                     <i class="fa fa-times-circle-o" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            October 12, 2015
-                                                        </a>
-                                                    </i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row"
-                                         style="border-bottom: solid 1px lightgray; margin-bottom: 10px; margin-top: 10px">
-                                        <div class="col-md-2 col-lg-2 hidden-xs hidden-sm" style="padding: 10px">
-                                            <img src="img/blog2.png" alt="" class="circular"/>
-                                        </div>
-                                        <div class="col-md-10 col-lg-10 hidden-xs hidden-sm">
-                                            <div>
-                                                <a href="blogList.html">
-                                                    <h4>We are looking for awesome graphic artist with inverted
-                                                        body
-                                                        clock</h4>
-                                                </a>
-
-                                                <p style="font-size: 12px">
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <div style="font-size: 15px">
-                                                    <i class="fa fa-user" style="color: dimgray">
-                                                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            Andrea Amor
-                                                        </a>
-                                                    </i>
-                                                    <br/>
-                                                    <i class="fa fa-times-circle-o" style="color: dimgray">
-                                                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            October 12, 2015
+                                                            {{blog.date_posted}}
                                                         </a>
                                                     </i>
                                                 </div>
@@ -283,63 +241,30 @@
                     <!--items-->
                     <!--items-->
                     <!--items-->
-                    <div class="row hidden-md hidden-lg" style="border-bottom: 1px solid lightgray">
+                    <div class="row hidden-md hidden-lg" ng-repeat="blog in blogs" style="border-bottom: 1px solid lightgray">
                         <div class="col-sm-3 col-xs-3 hidden-md hiddenl-lg">
-                            <img src="img/blog3.png" alt="" class="circular"
+                            <img src="{{globals.remoteRootUrl}}uploads/blogs/{{blog.blog_id}}/{{blog.blogPic}}" alt="" class="circular"
                                  style="width:100px; height: 100px; margin-top: 25px; padding: 10px"/>
                         </div>
                         <div class="col-xs-9 col-sm-9 hidden-md hidden-lg">
-                            <h5>Duterte will not run for presidency, says by curly asian girl</h5>
+                            <h5><a href="blog.html#/{{blog.blog_id}}">{{blog.blog_title}}</a></h5>
 
                             <div style="margin-bottom: 5px">
                                 <i class="fa fa-clock-o" style="color: dimgray">
-                                    <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
-                                        October 11, 2015
-                                    </a>
+                                    <span style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
+                                        {{blog.date_posted}}
+                                    </span>
                                 </i>
                                 &nbsp;
                                 <i class="fa fa-user" style="color: dimgray">
-                                    <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
-                                        Bless Fernandez
-                                    </a>
+                                    <span style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
+                                        {{blog.user_fullname}}
+                                    </span>
                                 </i>
                                 <br/>
                             </div>
                             <p style="font-size: 12px">
-                                This is your job description, with
-                                awesome words and fabulous lovely description
-                                This is your job description, with
-                                awesome words and fabulous lovely description
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row hidden-md hidden-lg" style="border-bottom: 1px solid lightgray">
-                        <div class="col-sm-3 col-xs-3 hidden-md hiddenl-lg">
-                            <img src="img/blog3.png" alt="" class="circular"
-                                 style="width:100px; height: 100px; margin-top: 25px; padding: 10px"/>
-                        </div>
-                        <div class="col-xs-9 col-sm-9 hidden-md hidden-lg">
-                            <h5>Duterte will not run for presidency, says by curly asian girl</h5>
-
-                            <div style="margin-bottom: 5px">
-                                <i class="fa fa-clock-o" style="color: dimgray">
-                                    <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
-                                        October 11, 2015
-                                    </a>
-                                </i>
-                                &nbsp;
-                                <i class="fa fa-user" style="color: dimgray">
-                                    <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
-                                        Bless Fernandez
-                                    </a>
-                                </i>
-                                <br/>
-                            </div>
-                            <p style="font-size: 12px">
-                                This is your job description, with
-                                awesome words and fabulous lovely description
-                                This is your job description, with
-                                awesome words and fabulous lovely description
+                                {{blog.blog_desc}}
                             </p>
                         </div>
                     </div>
@@ -405,8 +330,6 @@
                     </b>
                 </b>
             </div>
-
-
         </div>
     </div>
     </div>
@@ -456,39 +379,7 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content modal-popup">
-            <a href="#" class="close-link2"><i class="icon_close_alt2"></i>
-            </a>
 
-            <h3 class="white">Apply Here</h3>
-
-            <p style="font-size: 12px; color: #ffffff; text-align: center;">
-                You may contact us at our landline, <br/>
-                (02) 893-1610 | 0917-527-8926 | 0917-527-9750 <br/>
-                or <br/>
-                View our map
-                <!--<a href="" target="_blank" >here</a>-->
-                <a onclick="window.open('http://maps.google.com/maps?&z=17&mrt=loc&t=m&q=14.55644538,121.02571115','name','width=800,height=500')"
-                   style="cursor: pointer">Here</a>
-            </p>
-
-            <form action="" class="popup-form">
-                <input type="text" class="form-control form-white" placeholder="First Name">
-                <input type="text" class="form-control form-white" placeholder="Last Name">
-                <input type="email" class="form-control form-white" placeholder="Email Address">
-                <input type="text" class="form-control form-white" placeholder="Contact Number">
-
-                <p style="font-size: 12px; color: #ffffff; text-align: center;">
-                    Attach your CV here. (Must be PDF format)
-                </p>
-                <input type="file" class="file form-control form-white"/>
-                <button type="submit" class="btn btn-submit">Submit</button>
-            </form>
-        </div>
-    </div>
-</div>
 
 <!--<section class="section" style="padding: 30px">-->
 <!--<div id="googleMap" style="height: 350px; width: auto"></div>-->
