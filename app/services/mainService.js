@@ -38,6 +38,8 @@ dmApp.service('mainService', function ($http, Globals) {
         }).success(callback).error(errback);
     };
 
+
+
     var getBlog = function (callback, errback, blogId){
         $http({
             method: 'GET',
@@ -48,10 +50,21 @@ dmApp.service('mainService', function ($http, Globals) {
         }).success(callback).error(errback);
     };
 
+    var getJob = function (callback, errback, jobId){
+        $http({
+            method: 'GET',
+            url: url + 'job/getJob',
+            params: {
+                jobId: jobId
+            }
+        }).success(callback).error(errback);
+    };
+
     return {
         fetchJobs: fetchJobs,
         fetchBlogs: fetchBlogs,
         getBlog: getBlog,
+        getJob: getJob,
         fetchJobsMobile: fetchJobsMobile
     };
 });

@@ -140,48 +140,31 @@
                                          style="border-bottom: solid 1px lightgray; padding-bottom: 10px; padding-top: 10px">
                                         <div class="col-md-9 col-lg-9 hidden-sm hidden-xs">
                                             <div>
-                                                <h4>Technical Support Representatives Needed – 18K+ Salary, Urgent
-                                                    Requirement</h4>
+                                                <h4>{{job.job_title}}</h4>
 
                                                 <p style="font-size: 12px">
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
+                                                    {{job.job_desc}}
                                                 </p>
                                             </div>
                                         </div>
                                         <div class="col-md-3 hidden-sm hidden-xs">
-                                            <i class="fa fa-clock-o"
-                                               style="color: dimgray; padding-bottom: 15px">
-                                                <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                    Oct 10, 2015
-                                                </a>
-                                            </i>
-
                                             <div>
                                                 <div style="font-size: 15px">
-                                                    <i class="fa fa-building-o" style="color: dimgray">
+                                                    <i class="fa fa-money" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            Direct Match Outsourcing.inc
+                                                            {{job.salary_range}}
                                                         </a>
                                                     </i>
                                                     <br/>
                                                     <i class="fa fa-location-arrow" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            Manila. Metro Manila
-                                                        </a>
-                                                    </i>
-                                                    <br/>
-                                                    <i class="fa fa-money" style="color: dimgray">
-                                                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            Php 10,000- Php 20,000
+                                                            {{job.location}}
                                                         </a>
                                                     </i>
                                                     <br/>
                                                     <i class="fa fa-info-circle" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            CSR
+                                                            {{job.category}}
                                                         </a>
                                                     </i>
                                                 </div>
@@ -189,30 +172,7 @@
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top: 20px; margin-bottom: 20px">
-                                        <img src="img/banner_jobs_01.jpg" alt="" style="width: 100%"/>
-
-                                        <div style="color: dimgray; margin-top: 10px">
-                                            <ul>
-                                                <li>
-                                                    Degree (Preferably in Accountancy & CPA Certified)
-                                                </li>
-                                                <li>
-                                                    Preparing financial statements, business plans, commentaries and
-                                                    budgets for management or
-                                                    client reports;
-                                                </li>
-                                                <li> Regularly undertaking audits, involving the examination of the
-                                                    organization's accounts,
-                                                </li>
-                                                <li>Regularly undertaking audits, involving the examination of the
-                                                    organization's accounts,
-                                                </li>
-                                                <li>Analyzing risk, inspecting the organization's current practices,
-                                                    Investigating any financial
-                                                    irregularities and recommending improvements;
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        <div ng-bind-html="job.job_body | to_trusted" style="padding-left: 20px; padding-right: 20px"></div>
                                     </div>
                                     <div style="color: dimgray">
                                         <div>

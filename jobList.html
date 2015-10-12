@@ -139,45 +139,34 @@
                                     <!--Job list-->
                                     <!--Job list-->
                                     <!--Job list-->
-                                    <div class="row"
+                                    <div class="row" ng-repeat="job in jobsMobile"
                                          style="border-bottom: solid 1px lightgray; padding-bottom: 10px; padding-top: 10px">
                                         <div class="col-md-10 col-lg-10 hidden-xs hidden-sm">
                                             <div>
-                                                <h5>We are looking for awesome graphic artist with inverted
-                                                    body
-                                                    clock</h5>
+                                                <h5>{{job.job_title}}</h5>
 
                                                 <p style="font-size: 12px">
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
+                                                    {{job.job_desc}}
                                                 </p>
                                             </div>
                                             <div>
                                                 <div style="font-size: 15px">
-                                                    <i class="fa fa-building-o" style="color: dimgray">
+                                                    <i class="fa fa-money" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            Direct Match Outsourcing.inc
+                                                            {{job.salary_range}} php
                                                         </a>
                                                     </i>
                                                     <br/>
                                                     <i class="fa fa-location-arrow" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            Manila. Metro Manila
+                                                            {{job.location}}
                                                         </a>
                                                     </i>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-lg-2 hidden-xs hidden-sm">
-                                            <i class="fa fa-clock-o"
-                                               style="color: dimgray; padding-bottom: 15px">
-                                                <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                    Oct 10, 2015
-                                                </a>
-                                            </i>
-                                            <a href="job.html"
+                                            <a href="job.html#/{{job.job_id}}"
                                                class="btn btn-blue" style="font-size: 12px">
                                                 <b>
                                                     View Job
@@ -266,39 +255,28 @@
          padding-bottom: 0px;
          padding-top: 20px;
          margin-top: 50px;
-         border-bottom: solid 1px dimgrey">
+         border-bottom: solid 1px dimgrey" ng-repeat="job in jobs">
         <div>
             <div style="border-bottom: 1px solid lightgray; margin-bottom: 10px">
-                <b style="font-size: 14px">We are looking for awesome graphic artist with inverted
-                    body
-                    clock</b>
+                <b style="font-size: 14px">{{job.job_title}}</b>
 
                 <p style="font-size: 10px">
-                    This is your job description, with
-                    awesome words and fabulous lovely description
-                    This is your job description, with
-                    awesome words and fabulous lovely description
+                    {{job.job_desc}}
                 </p>
             </div>
             <div class="col-xs-12 col-sm-12 hidden-lg hidden-md" style="padding: 0px; margin-bottom: 10px">
                 <div style="font-size: 12px">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 hidden-md hidden-lg">
-                            <i class="fa fa-building-o">
+                            <i class="fa fa-money">
                                 <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 8px">
-                                    Direct Match Outsourcing.inc
+                                    {{job.salary_range}} php
                                 </a>
                             </i>
                             <br/>
                             <i class="fa fa-location-arrow">
                                 <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 8px">
-                                    Manila, Metro Manila
-                                </a>
-                            </i>
-                            <br/>
-                            <i class="fa fa-clock-o">
-                                <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 8px">
-                                    Oct 18, 2015
+                                    {{job.location}}
                                 </a>
                             </i>
                         </div>

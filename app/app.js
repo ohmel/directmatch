@@ -27,9 +27,12 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
     $scope.isLoggedIn = false;
     $scope.blogs = [];
     $scope.jobs = [];
+    $scope.job = {};
     $scope.jobsMobile = [];
     $scope.showJobs = false;
     $scope.showBlogs = false;
+    var location = $location.path();
+    $scope.jobId = location.replace("/", "");
 
 
     mainService.fetchJobs(
@@ -58,6 +61,14 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
         }, function (error) {
 
         });
+
+    mainService.getJob(
+        function(success){
+            $scope.job = success.data
+        }, function(error){
+
+        }, $scope.jobId
+    )
 
     mainService.fetchBlogs(
         function (success){
