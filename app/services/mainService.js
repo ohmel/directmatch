@@ -13,7 +13,10 @@ dmApp.service('mainService', function ($http, Globals) {
     var fetchJobs = function (callback, errback){
         $http({
             method: 'GET',
-            url: url + 'job/frontFetchJobs'
+            url: url + 'job/frontFetchJobs',
+            params: {
+                s: 1
+            }
         }).success(callback).error(errback);
     };
 
@@ -33,7 +36,8 @@ dmApp.service('mainService', function ($http, Globals) {
             url: url + 'blog/fetchBlogs',
             params: {
                 query: "",
-                page: 0
+                page: 0,
+                s: 1
             }
         }).success(callback).error(errback);
     };

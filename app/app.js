@@ -54,7 +54,7 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
                     //$scope.jobs =
                 }, function (error) {
 
-                });
+                }, 1);
 
 
             //$scope.jobs =
