@@ -31,6 +31,10 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
     $scope.showJobs = false;
     $scope.showBlogs = false;
 
+    $scope.viewBlog = function(blogId){
+        $rootScope.blogId = blogId;
+        $location.absUrl(Globals.rootUrl+'/blog.html#!/blog/'+blogId);
+    }
 
     mainService.fetchJobs(
         function (success) {
@@ -74,10 +78,22 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
         }, function (error){
 
         });
+});
 
+dmApp.controller('blogController', function ($location, $scope, Globals, ngDialog, $rootScope, $cookies, mainService) {
 
+    // create a message to display in our view
+    $scope.globals = Globals;
+    $scope.isLoggedIn = false;
+    $scope.blogs = [];
+    //$scope.route = $route.current.params;
+    $scope.showBlogs = false;
 
+    mainService.fetchBlogs(
+        function (success){
+            angular.copy(success.data, $scope.blogs);
+        }, function (error){
 
-
+        });
 });
 // create the controller and inject Angular's $scope

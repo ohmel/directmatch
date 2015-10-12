@@ -292,7 +292,7 @@
                         <div class="fa fa-pencil-square-o">
                         </div>
                         <a href="blogList.html"><b
-                                style="color: #ffffff; font-family: arial; font-size: 15px">View all Blogs</b></a>
+                                style="color: #ffffff; font-family: arial; font-size: 15px">View Blogs</b></a>
                     </i>
                 </h3>
             </div>
@@ -307,7 +307,8 @@
                                  class="circular" alt=""/>
                             <br/>
                             <br/>
-                            <a class="btn btn-info btn-xs" style="background-color: #31B9FF">View Blogs</a>
+                            <!--<a ng-click="viewBlog(blog.blog_id)" class="btn btn-info btn-xs" style="background-color: #31B9FF">Read More</a>-->
+                            <a href="blog.html#!/blog/{{blog.blog_id}}" class="btn btn-info btn-xs" style="background-color: #31B9FF">Read More</a>
                         </div>
                         <div class="item text-left col-md-8 col-lg-8">
                             <h4 class="white heading" style="cursor: pointer">{{blog.blog_title}} </h4>
