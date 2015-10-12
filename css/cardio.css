@@ -1129,3 +1129,23 @@ footer .social-footer li:hover a {
     -moz-border-radius: 150px;
     background: url(http://link-to-your/image.jpg) no-repeat;
 }
+
+.wrapperline{
+    width: 100%;
+    float: left;
+    height: 50px;
+    text-align: center;
+    background-color:#ffffff;}
+
+.boxinside{
+    width: 90px;
+    float: inherit;
+    height: 50px;
+    margin: 2px;
+    padding: 3px;
+    background-color:#9C0;
+    float:left;}
+
+a:hover {
+    color: red;
+}

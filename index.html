@@ -76,7 +76,7 @@
 
 <body ng-controller="mainController">
 <div class="preloader">
-    <img src="img/loader.gif" alt="Preloader image">
+    <img src="img/loader.gif" alt="Preloader image"%">
 </div>
 
 <nav class="navbar col-md-12 col-sm-4">
@@ -90,7 +90,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="img/logo.png" data-active-url="img/logo-active.png"></a>
+            <div class="hidden-xs hidden-sm" style="height: 90px">
+                <a class="navbar-brand" href="#"><img src="img/logov2.png" data-active-url="img/logo-activev2.png"></a>
+            </div>
+            <div class="hidden-lg hidden-md" style="height: 60px">
+                <a class="navbar-brand" href="#"><img src="img/logov2.png" data-active-url="img/logo-activev2.png"></a>
+            </div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <br/>
@@ -277,14 +282,19 @@
             margin-top: 5px !important;
         }
     </style>
-    <section class="blue-bg hidden-xs hidden-sm" ng-show="showBlogs === true">
+    <!--<section class="blue-bg hidden-xs hidden-sm" ng-show="showBlogs === true">-->
+    <section class="blue-bg hidden-xs hidden-sm">
         <div class="row">
-            <div class="col-md-12 col-lg-12" style="background-color: #003399; fill-opacity: 5">
-                <h3 style="text-align: center; color: white;">
+            <div class="col-md-12 col-lg-12 " style="background-color: #003399; fill-opacity: 5">
+                <h3 style="text-align: left; color: white;" class="col-md-offset-1 col-lg-offset-1">
                     Featured Blogs
-                    <div class="fa fa-pencil-square-o"></div>
+                    <i>
+                        <div class="fa fa-pencil-square-o">
+                        </div>
+                        <a href="blogList.html"><b
+                                style="color: #ffffff; font-family: arial; font-size: 15px">View all Blogs</b></a>
+                    </i>
                 </h3>
-
             </div>
 
         </div>
