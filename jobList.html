@@ -214,7 +214,6 @@
     </div>
 </section>
 <!---------------------------------------------------------------------------------------------------------------------------->
-</section>
 <!--Mobile UI-->
 <!--Mobile UI-->
 <!--Mobile UI-->
@@ -237,7 +236,7 @@
          padding-bottom: 0px;
          padding-top: 20px;
          margin-top: 50px;
-         border-bottom: solid 1px dimgrey" ng-repeat="job in jobs">
+         border-bottom: solid 1px dimgrey" ng-repeat="job in jobsMobile">
         <div>
             <div style="border-bottom: 1px solid lightgray; margin-bottom: 10px">
                 <b style="font-size: 14px">{{job.job_title}}</b>
@@ -263,7 +262,7 @@
                             </i>
                         </div>
                         <div class="col-xs-6 col-sm-6 hidden-md hidden-lg">
-                            <a href="job.html"
+                            <a href="job.html#/{{job.job_id}}"
                                class="btn btn-blue" style="font-size: 12px">
                                 <b>
                                     View Job
