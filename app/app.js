@@ -74,10 +74,34 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
         }, function (error){
 
         });
+});
+
+dmApp.controller('blogController', function ($location, $scope, Globals, ngDialog, $rootScope, $cookies, mainService) {
+
+    // create a message to display in our view
+    $scope.globals = Globals;
+    $scope.isLoggedIn = false;
+    $scope.blogs = [];
+    $scope.blog = {};
+    //$scope.route = $route.current.params;
+    $scope.showBlogs = false;
+    var location = $location.path();
+    $scope.blogId = location.replace("/", "");
 
 
+    mainService.fetchBlogs(
+        function (success){
+            angular.copy(success.data, $scope.blogs);
+        }, function (error){
 
+        });
 
+    mainService.getBlog(
+        function(success){
+            $scope.blog = success.data
+        }, function(error){
 
+        }, $scope.blogId
+    )
 });
 // create the controller and inject Angular's $scope

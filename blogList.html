@@ -139,80 +139,37 @@
                                     <!--Job list-->
                                     <!--Job list-->
                                     <!--Job list-->
-                                    <div class="row"
+                                    <div class="row" ng-repeat="blog in blogs"
                                          style="border-bottom: solid 1px lightgray; margin-bottom: 10px; margin-top: 10px">
                                         <div class="col-mimgd-2 col-lg-2 hidden-xs hidden-sm" style="padding: 10px">
-                                               <img src="img/blog2.png" alt="" class="circular"/>
+                                               <img src="{{globals.remoteRootUrl}}/uploads/blogs/{{blog.blog_id}}/{{blog.blogPic}}" alt="" class="circular"/>
                                         </div>
                                         <div class="col-md-10 col-lg-10 hidden-xs hidden-sm">
                                             <div>
-                                                <a href="blog.html">
-                                                    <h4>We are looking for awesome graphic artist with inverted
-                                                        body
-                                                        clock</h4>
+                                                <a href="blog.html#/{{blog.blog_id}}">
+                                                    <h4>{{blog.blog_title}}</h4>
                                                 </a>
                                                 <p style="font-size: 12px">
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
+                                                    {{blog.blog_desc}}
                                                 </p>
                                             </div>
                                             <div>
                                                 <div style="font-size: 15px">
                                                     <i class="fa fa-user" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            Andrea Amor
+                                                            {{blog.user_fullname}}
                                                         </a>
                                                     </i>
                                                     <br/>
                                                     <i class="fa fa-times-circle-o" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            October 12, 2015
+                                                            {{blog.date_posted}}
                                                         </a>
                                                     </i>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row"
-                                         style="border-bottom: solid 1px lightgray; margin-bottom: 10px; margin-top: 10px">
-                                        <div class="col-md-2 col-lg-2 hidden-xs hidden-sm" style="padding: 10px">
-                                            <img src="img/blog2.png" alt="" class="circular"/>
-                                        </div>
-                                        <div class="col-md-10 col-lg-10 hidden-xs hidden-sm">
-                                            <div>
-                                                <a href="blogList.html">
-                                                    <h4>We are looking for awesome graphic artist with inverted
-                                                        body
-                                                        clock</h4>
-                                                </a>
-                                                <p style="font-size: 12px">
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
-                                                    This is your job description, with
-                                                    awesome words and fabulous lovely description
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <div style="font-size: 15px">
-                                                    <i class="fa fa-user" style="color: dimgray">
-                                                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            Andrea Amor
-                                                        </a>
-                                                    </i>
-                                                    <br/>
-                                                    <i class="fa fa-times-circle-o" style="color: dimgray">
-                                                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            October 12, 2015
-                                                        </a>
-                                                    </i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
                                 </div>
                             </div>
                         </div>

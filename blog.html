@@ -74,9 +74,9 @@
     <!--</script>-->
 </head>
 
-<body ng-controller="mainController">
+<body ng-controller="blogController">
 <div class="preloader">
-    <img src="img/loader.gif" alt="Preloader image" %">
+    <img src="img/loader.gif" alt="Preloader image">
 </div>
 
 <nav class="navbar col-md-12 col-sm-4">
@@ -123,7 +123,7 @@
                     </h3>
                 </div>
                 <div class="col-md-11 col-lg-11 hidden-xs hidden-sm">
-                    <h4 style="color: #ffffff"></h4>
+                    <h4 style="color: #ffffff">Blog</h4>
                 </div>
             </div>
         </div>
@@ -139,36 +139,28 @@
                                     <div class="row"
                                          style="border-bottom: solid 1px lightgray; margin-bottom: 10px; margin-top: 10px">
                                         <div class="col-md-2 col-lg-2 hidden-xs hidden-sm" style="padding: 10px">
-                                            <img src="img/blog3.png" alt="" class="circular"/>
+                                            <img src="{{globals.remoteRootUrl}}/uploads/blogs/{{blog.blog_id}}/{{blog.blogPic}}" alt="" class="circular"/>
                                         </div>
                                         <div class="col-md-10 col-lg-10 hidden-xs hidden-sm">
                                             <div>
                                                 <a href="link">
-                                                    <h4>Celebrating LinkedIn’s Women in Tech and Mentorship at Grace Hopper 2015</h4>
+                                                    <h4>{{blog.blog_title}}</h4>
                                                 </a>
-
                                                 <p style="font-size: 12px">
-                                                    While the gender imbalance in the tech industry is prevalent,
-                                                    watching women come together and commit to making change is
-                                                    inspiring. That’s why LinkedIn is sending 100+ of our women
-                                                    software engineers, designers, and product managers – along
-                                                    with several of our male leaders – to the Grace Hopper
-                                                    Conference in Houston. I can’t help but feel energized by
-                                                    these women who are the driving force behind our employee-
-                                                    led Women in Tech (WIT) program and who show such…
+                                                    {{blog.blog_desc}}
                                                 </p>
                                             </div>
                                             <div>
                                                 <div style="font-size: 15px">
                                                     <i class="fa fa-user" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            Bless Fernandez
+                                                            {{blog.user_fullname}}
                                                         </a>
                                                     </i>
                                                     <br/>
                                                     <i class="fa fa-times-circle-o" style="color: dimgray">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
-                                                            October 12, 2015
+                                                            {{blog.date_posted}}
                                                         </a>
                                                     </i>
                                                 </div>
@@ -176,35 +168,7 @@
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top: 20px; margin-bottom: 20px">
-                                        <div style="color: dimgray; margin-top: 10px; padding-left: 50px; padding-right: 50px">
-                                            <img src="img/blog3-video.png" alt="" style="width: 100%"/>
-                                            While the gender imbalance in the tech industry is prevalent,
-                                            watching women come together and commit to making change is
-                                            inspiring. That’s why LinkedIn is sending 100+ of our women
-                                            software engineers, designers, and product managers – along
-                                            with several of our male leaders – to the Grace Hopper Conference in Houston.
-                                            I can’t help but feel energized by these women who are the
-                                            driving force behind our employee-led Women in Tech (WIT)
-                                            program and who show such inspiring dedication to tackling
-                                            the gender imbalance in the tech industry.
-                                            <br/>
-                                            <br/>
-                                            One of our WIT program’s key focus areas is mentorship.
-                                            We believe deeply that mentorship plays a crucial role
-                                            in empowering and shaping the career paths of women in
-                                            tech. When we connect people with the right mentor or
-                                            mentee, we’re paving the way for our employees to develop
-                                            a valuable relationships that can help transform their career.
-                                            <br/>
-                                            <br/>
-                                            Our WIT leaders all have stories of how mentors have helped them at
-                                            key moments in their careers. From learning to embrace a stronger
-                                            voice in a male-dominated environment, to the importance of working
-                                            irectly alongside a technical mentor, to being encouraged to continue
-                                            education to fuel growth and new passion for work. It was also clear
-                                            that confidence is a trait built, buoyed, and strengthened through
-                                            mentor relationships.
-                                        </div>
+                                        <div ng-bind-html="blog.blog_body | to_trusted" style="padding-left: 20px; padding-right: 20px"></div>
                                     </div>
                                 </div>
                             </div>
