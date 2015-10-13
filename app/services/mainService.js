@@ -42,6 +42,17 @@ dmApp.service('mainService', function ($http, Globals) {
         }).success(callback).error(errback);
     };
 
+    var liApply = function(callback, errback, liDetails, jobId){
+        $http({
+            method: 'POST',
+            url: url + 'job/liApply',
+            data: {
+                smDetails: liDetails,
+                jobId: jobId
+            }
+        }).success(callback).error(errback);
+    }
+
     var linkedInProfile = function(callback, errback){
         IN.API.Profile("me").fields("first-name", "last-name", "maiden-name","email-address").result(callback).error(errback);
         //IN.API.Raw("/ohmel").result(callback).error(errback);
@@ -56,7 +67,7 @@ dmApp.service('mainService', function ($http, Globals) {
             method: 'POST',
             url: url + 'job/apply',
             data: {
-                fbDetails: fbDetails,
+                smDetails: fbDetails,
                 jobId: jobId
             }
         }).success(callback).error(errback);
@@ -87,6 +98,7 @@ dmApp.service('mainService', function ($http, Globals) {
         fetchBlogs: fetchBlogs,
         linkedInProfile: linkedInProfile,
         fbApply: fbApply,
+        liApply: liApply,
         getBlog: getBlog,
         getJob: getJob,
         fetchJobsMobile: fetchJobsMobile

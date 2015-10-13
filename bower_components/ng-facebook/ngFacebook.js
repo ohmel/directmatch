@@ -14,7 +14,7 @@ dmApp.provider('$facebook', function() {
     var config = {
       permissions:    'email',
       appId:          '1490175181279074',
-      version:        'v2.4',
+      version:        'v2.1',
       customInit:     {}
     };
 

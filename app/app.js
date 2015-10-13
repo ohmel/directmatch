@@ -40,11 +40,28 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
     $scope.jobId = location.replace("/", "");
     $scope.urlSubmit = Globals.remoteRootUrl2+"/index.php/job/apply/"+$scope.jobId;
 
-    $scope.connect = function(jobID) {
+    $scope.connect = function(jobId) {
         IN.User.authorize(function(response) {
             mainService.linkedInProfile(
                 function(success){
-                    $scope.liProfile = success.value[0];
+                    $scope.liProfile = success.values[0];
+                    mainService.liApply(
+                        function(onSuccess){
+                            if(onSuccess.data == true){
+                                ngDialog.open({
+                                    template: '<p>Successfully applied for this job</p>',
+                                    plain: true
+                                });
+                                $linkedIn.logout();
+                            }
+                        }, function (onError){
+                            ngDialog.open({
+                                template: '<p>'+onError.message+'</p>',
+                                plain: true
+                            });
+                            $linkedIn.logout();
+                        }, $scope.liProfile, jobId
+                    )
                     console.log($scope.liProfile);
                 }, function (error){
 
@@ -55,29 +72,55 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
 
     $scope.fbLogin = function(jobId){
         //alert("jkh");
-        var permissions=$facebook.config("permissions");
-        var loginOptions = { scope: permissions };
-        FB.login(function(response1) {
-            //console.log(response1);
-            FB.api('/me', {
-                fields: 'email, last_name, first_name, middle_name'
-            }, function(response2) {
-                //console.log(response2);
-                mainService.fbApply(
-                    function(success){
-                        alert("Successfully applied for this job!");
-                    }, function (error){
-                        alert(error.message);
-                        $facebook.logout();
-                        ngNotify.set("You don't have email address", "error");
-                    }, response2, jobId
-                )
-            });
-        }, loginOptions);
+        $facebook.login().then(
+            function(response){
+                FB.api('/me', {
+                    fields: 'email, last_name, first_name, middle_name'
+                }, function(response) {
+                    //console.log(response2);
+                    mainService.fbApply(
+                        function(success){
+                            ngDialog.open({
+                                template: '<p>Successfully applied for this job</p>',
+                                plain: true
+                            });
+                            $facebook.logout();
+                        }, function (error){
+                            ngDialog.open({
+                                template: '<p>Failed to apply for this job</p>',
+                                plain: true
+                            });
+                            $facebook.logout();
+                        }, response, jobId
+                    )
+                });
+            }, function(error){
+                ngDialog.open({
+                    template: '<p>Failed to apply for this job</p>',
+                    plain: true
+                });
+                $facebook.logout();
+            }
+        )
+        //var permissions=$facebook.config("permissions");
+        //var loginOptions = { scope: permissions };
+        //FB.login(function(response1) {
+        //    //console.log(response1);
+        //
+        //}, loginOptions);
 
     }
-    $scope.fbLogout = function(){
-        $facebook.logout();
+    $scope.fbShare = function(){
+        $facebook.ui({
+            method: 'share',
+            href: 'https://directmatchoutsourcing.com',
+        }).then(
+            function(success){
+                alert("success");
+            }, function (error){
+                alert("error");
+            }
+        );
     }
 
 
@@ -101,8 +144,6 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
                 }, function (error) {
 
                 }, 1);
-
-
             //$scope.jobs =
         }, function (error) {
 
@@ -111,6 +152,7 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
     mainService.getJob(
         function(success){
             $scope.job = success.data
+
         }, function(error){
 
         }, $scope.jobId
