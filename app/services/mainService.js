@@ -42,7 +42,25 @@ dmApp.service('mainService', function ($http, Globals) {
         }).success(callback).error(errback);
     };
 
-
+    var linkedInProfile = function(callback, errback){
+        IN.API.Profile("me").fields("first-name", "last-name", "maiden-name","email-address").result(callback).error(errback);
+        //IN.API.Raw("/ohmel").result(callback).error(errback);
+        //IN.API.Raw(url).method(methodType).body(bodyContent).result(resultCallback);
+            //$http({
+            //    method: 'GET',
+            //    url: "https://api.linkedin.com/v1/people/~?format=json",
+            //}).success(callback).error(errback);
+    }
+    var fbApply = function (callback, errback, fbDetails, jobId){
+        $http({
+            method: 'POST',
+            url: url + 'job/apply',
+            data: {
+                fbDetails: fbDetails,
+                jobId: jobId
+            }
+        }).success(callback).error(errback);
+    };
 
     var getBlog = function (callback, errback, blogId){
         $http({
@@ -67,6 +85,8 @@ dmApp.service('mainService', function ($http, Globals) {
     return {
         fetchJobs: fetchJobs,
         fetchBlogs: fetchBlogs,
+        linkedInProfile: linkedInProfile,
+        fbApply: fbApply,
         getBlog: getBlog,
         getJob: getJob,
         fetchJobsMobile: fetchJobsMobile

@@ -51,6 +51,7 @@
     <script src="app/routing.js"></script>
     <script src="http://connect.facebook.net/en_US/all.js"></script>
     <script src="bower_components/ng-facebook/ngFacebook.js"></script>
+    <script src="bower_components/ngLinkedIn/ngLinkedIn.js"></script>
     <script src="app/factories/globals.js"></script>
     <script src="app/services/mainService.js"></script>
 </head>
@@ -160,11 +161,11 @@
                                             <a href="#/{{jobId}}" data-toggle="modal" data-target="#modal2" class="btn btn-blue">
                                                 <b
                                                         style="color: #ffffff">Apply here</b></a>
-                                            <a href="#" class="btn btn-blue"><b
+                                            <a ng-click="connect(jobId)" class="btn btn-blue"><b
                                                     style="color: #ffffff">Linked</b>
                                                 <b class="fa fa-linkedin-square">
                                                 </b></a>
-                                            <a href="#" data-toggle="modal" data-target="#modal2" class="btn btn-blue">
+                                            <a style="cursor: pointer" class="btn btn-blue" ng-click="fbLogin(jobId)">
                                                 <b style="color: #ffffff" class="fa fa-facebook-square"></b>
                                                 <b>
                                                     Facebook

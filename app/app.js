@@ -4,7 +4,10 @@
 // app.js
 
 // create the module and name it scotchApp
-var dmApp = angular.module('dmApp', ['angular-confirm', 'ngRoute', 'ngAnimate', 'ngDialog', 'ngNotify', 'ngCookies', 'ui.bootstrap', 'ngMessages', 'ui.tinymce']);
+var dmApp = angular.module('dmApp', ['ngLinkedIn','angular-confirm', 'ngRoute', 'ngAnimate', 'ngDialog', 'ngNotify', 'ngCookies', 'ui.bootstrap', 'ngMessages', 'ui.tinymce']);
+dmApp.config(function($linkedInProvider) {
+    $linkedInProvider.set('appKey', '75skho8ig496fz');
+});
 dmApp.filter('to_trusted', ['$sce', function ($sce) {
     return function (text) {
         return $sce.trustAsHtml(text);
@@ -20,7 +23,7 @@ dmApp.run(function ($rootScope) {
 /**
  * Created by Ohmel on 7/29/2015.
  */
-dmApp.controller('mainController', function ($timeout, $location, $scope, Globals, ngDialog, $rootScope, $cookies, mainService) {
+dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebook, $timeout, $location, $scope, Globals, ngDialog, $rootScope, $cookies, mainService) {
 
     // create a message to display in our view
     $scope.globals = Globals;
@@ -28,12 +31,54 @@ dmApp.controller('mainController', function ($timeout, $location, $scope, Global
     $scope.blogs = [];
     $scope.jobs = [];
     $scope.job = {};
+    $scope.liProfile = {};
     $scope.jobsMobile = [];
     $scope.showJobs = false;
     $scope.showBlogs = false;
-    $scope.urlSubmit = Globals.remoteRootUrl2+"/index.php/job/apply";
+
     var location = $location.path();
     $scope.jobId = location.replace("/", "");
+    $scope.urlSubmit = Globals.remoteRootUrl2+"/index.php/job/apply/"+$scope.jobId;
+
+    $scope.connect = function(jobID) {
+        IN.User.authorize(function(response) {
+            mainService.linkedInProfile(
+                function(success){
+                    $scope.liProfile = success.value[0];
+                    console.log($scope.liProfile);
+                }, function (error){
+
+                }
+            )
+        });
+    }
+
+    $scope.fbLogin = function(jobId){
+        //alert("jkh");
+        var permissions=$facebook.config("permissions");
+        var loginOptions = { scope: permissions };
+        FB.login(function(response1) {
+            //console.log(response1);
+            FB.api('/me', {
+                fields: 'email, last_name, first_name, middle_name'
+            }, function(response2) {
+                //console.log(response2);
+                mainService.fbApply(
+                    function(success){
+                        alert("Successfully applied for this job!");
+                    }, function (error){
+                        alert(error.message);
+                        $facebook.logout();
+                        ngNotify.set("You don't have email address", "error");
+                    }, response2, jobId
+                )
+            });
+        }, loginOptions);
+
+    }
+    $scope.fbLogout = function(){
+        $facebook.logout();
+    }
 
 
     mainService.fetchJobs(
