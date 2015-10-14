@@ -33,7 +33,7 @@
 
     m.provider('ngDialog', function () {
         var defaults = this.defaults = {
-            className: 'ngdialog-theme-default',
+            className: 'ngdialog-theme-plain',
             plain: false,
             showClose: true,
             closeByDocument: true,

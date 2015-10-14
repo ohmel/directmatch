@@ -41,6 +41,8 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
     $scope.jobId = location.replace("/", "");
     $scope.urlSubmit = Globals.remoteRootUrl2 + "/index.php/job/apply/" + $scope.jobId;
 
+
+
     $scope.connect = function (jobId) {
         IN.User.authorize(function (response) {
             mainService.linkedInProfile(
@@ -48,13 +50,15 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
                     $scope.liProfile = success.values[0];
                     mainService.liApply(
                         function (onSuccess) {
-                            if (onSuccess.data == true) {
-                                ngDialog.open({
-                                    template: '<p>Successfully applied for this job</p>',
-                                    plain: true
-                                });
-                                $linkedIn.logout();
-                            }
+                            $rootScope.appId = onSuccess.data;
+                            ngDialog.open({
+                                template: 'applyPop.html',
+                                controller: ['$scope', 'mainService', function($scope, mainService) {
+                                    var location = $location.path();
+                                    $scope.jobId = location.replace("/", "");
+                                    $scope.urlSubmit = Globals.remoteRootUrl2 + "/index.php/job/updateTel/" + $scope.jobId;
+                                }]
+                            });
                         }, function (onError) {
                             ngDialog.open({
                                 template: '<p>' + onError.message + '</p>',
@@ -71,16 +75,24 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
         });
     }
 
+
+
     $scope.fbLogin = function (jobId) {
+
         $facebook.login().then(
             function (response) {
                 $facebook.api('/me', {fields: 'email, last_name, first_name, middle_name'}).then(
                     function (response) {
                         mainService.fbApply(
                             function (success) {
+                                $rootScope.appId = success.data;
                                 ngDialog.open({
-                                    template: '<p>Successfully applied for this job</p>',
-                                    plain: true
+                                    template: 'applyPop.html',
+                                    controller: ['$scope', 'mainService', function($scope, mainService) {
+                                        var location = $location.path();
+                                        $scope.jobId = location.replace("/", "");
+                                        $scope.urlSubmit = Globals.remoteRootUrl2 + "/index.php/job/updateTel/" + $scope.jobId;
+                                    }]
                                 });
                                 $facebook.logout();
                             }, function (error) {
