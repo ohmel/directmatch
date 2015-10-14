@@ -186,7 +186,16 @@ dmApp.controller('blogController', function ($location, $scope, Globals, ngDialo
     $scope.showBlogs = false;
     var location = $location.path();
     $scope.blogId = location.replace("/", "");
+    $scope.successMessage = "";
 
+    $scope.contactUs = function(cont){
+        mainService.contactUs(
+            function(success){
+                $scope.successMessage = "Hoooray! "+success.data.fullname+" your message has been sent!"
+            }, function (error){
+            }, cont
+        )
+    };
 
     mainService.fetchBlogs(
         function (success) {
