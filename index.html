@@ -54,26 +54,26 @@
     <script src="bower_components/ngLinkedIn/ngLinkedIn.js"></script>
     <script src="app/factories/globals.js"></script>
     <script src="app/services/mainService.js"></script>
-    <!--<script src="http://maps.googleapis.com/maps/api/js"></script>-->
-    <!--<script>-->
-    <!--var myCenter = new google.maps.LatLng(14.55644538, 121.02571115);-->
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        var myCenter = new google.maps.LatLng(14.55644538, 121.02571115);
 
-    <!--function initialize() {-->
-    <!--var mapProp = {-->
-    <!--center: myCenter,-->
-    <!--zoom: 18,-->
-    <!--scrollwheel: false,-->
-    <!--mapTypeId: google.maps.MapTypeId.ROADMAP-->
-    <!--};-->
-    <!--var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);-->
-    <!--var marker = new google.maps.Marker({-->
-    <!--position: myCenter-->
-    <!--});-->
-    <!--marker.setMap(map);-->
+        function initialize() {
+            var mapProp = {
+                center: myCenter,
+                zoom: 18,
+                scrollwheel: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({
+                position: myCenter
+            });
+            marker.setMap(map);
 
-    <!--}-->
-    <!--google.maps.event.addDomListener(window, 'load', initialize);-->
-    <!--</script>-->
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </head>
 
 <body ng-controller="mainController">
@@ -299,7 +299,12 @@
                 <div>
                     <div style="background-color: #1967A9; padding: 6px 2px 2px 2px; text-align: center">
                         <h3 style="color: #ffffff; padding-left: 20px">Featured Blogs
-                            <span class="fa fa-edit" style="color: white; font-size: 30px"></span>
+                    <i>
+                        <div class="fa fa-pencil-square-o">
+                        </div>
+                        <a href="blogList.html"><b
+                                style="color: #ffffff; font-family: arial; font-size: 15px">View Blogs</b></a>
+                    </i>
                         </h3>
 
                     </div>
@@ -705,9 +710,9 @@
         </div>
     </div>
 </section>
-<!--<section class="section" style="padding: 30px">-->
-<!--<div id="googleMap" style="height: 350px; width: auto"></div>-->
-<!--</section>-->
+<section class="section" style="padding: 30px">
+    <div id="googleMap" style="height: 350px; width: auto"></div>
+</section>
 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content modal-popup">
