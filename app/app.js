@@ -35,6 +35,7 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
     $scope.jobsMobile = [];
     $scope.showJobs = false;
     $scope.showBlogs = false;
+    $scope.successMessage = "";
 
     var location = $location.path();
     $scope.jobId = location.replace("/", "");
@@ -112,6 +113,15 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
             }
         );
     }
+
+    $scope.contactUs = function(cont){
+        mainService.contactUs(
+            function(success){
+                $scope.successMessage = "Hoooray! "+success.data.fullname+" your message has been sent!"
+            }, function (error){
+            }, cont
+        )
+    };
 
 
     mainService.fetchJobs(

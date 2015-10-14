@@ -42,6 +42,16 @@ dmApp.service('mainService', function ($http, Globals) {
         }).success(callback).error(errback);
     };
 
+    var contactUs = function(callback, errback, cont){
+        $http({
+            method: 'POST',
+            url: url + 'site/contactUs',
+            data: {
+                cont: cont,
+            }
+        }).success(callback).error(errback);
+    }
+
     var liApply = function(callback, errback, liDetails, jobId){
         $http({
             method: 'POST',
@@ -100,6 +110,7 @@ dmApp.service('mainService', function ($http, Globals) {
         fbApply: fbApply,
         liApply: liApply,
         getBlog: getBlog,
+        contactUs: contactUs,
         getJob: getJob,
         fetchJobsMobile: fetchJobsMobile
     };
