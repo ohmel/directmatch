@@ -49,30 +49,31 @@
     <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
     <script src="app/app.js"></script>
     <script src="app/routing.js"></script>
-    <!--<script src="http://connect.facebook.net/en_US/all.js"></script>-->
-    <!--<script src="bower_components/ng-facebook/ngFacebook.js"></script>-->
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+    <script src="bower_components/ng-facebook/ngFacebook.js"></script>
+    <script src="bower_components/ngLinkedIn/ngLinkedIn.js"></script>
     <script src="app/factories/globals.js"></script>
     <script src="app/services/mainService.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <script>
-        var myCenter = new google.maps.LatLng(14.55644538, 121.02571115);
+    <!--<script src="http://maps.googleapis.com/maps/api/js"></script>-->
+    <!--<script>-->
+    <!--var myCenter = new google.maps.LatLng(14.55644538, 121.02571115);-->
 
-        function initialize() {
-            var mapProp = {
-                center: myCenter,
-                zoom: 18,
-                scrollwheel: false,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-            var marker = new google.maps.Marker({
-                position: myCenter
-            });
-            marker.setMap(map);
+    <!--function initialize() {-->
+    <!--var mapProp = {-->
+    <!--center: myCenter,-->
+    <!--zoom: 18,-->
+    <!--scrollwheel: false,-->
+    <!--mapTypeId: google.maps.MapTypeId.ROADMAP-->
+    <!--};-->
+    <!--var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);-->
+    <!--var marker = new google.maps.Marker({-->
+    <!--position: myCenter-->
+    <!--});-->
+    <!--marker.setMap(map);-->
 
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+    <!--}-->
+    <!--google.maps.event.addDomListener(window, 'load', initialize);-->
+    <!--</script>-->
 </head>
 
 <body ng-controller="mainController">
@@ -92,10 +93,12 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="hidden-xs hidden-sm" style="height: 90px">
-                <a class="navbar-brand" href="index.html"><img src="img/logov2.png" data-active-url="img/logo-activev2.png"></a>
+                <a class="navbar-brand" href="index.html"><img src="img/logov2.png"
+                                                               data-active-url="img/logo-activev2.png"></a>
             </div>
             <div class="hidden-lg hidden-md" style="height: 60px">
-                <a class="navbar-brand" href="index.html"><img src="img/logov2.png" data-active-url="img/logo-activev2.png"></a>
+                <a class="navbar-brand" href="index.html"><img src="img/logov2.png"
+                                                               data-active-url="img/logo-activev2.png"></a>
             </div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -143,9 +146,7 @@
             <!--Desktop UI-->
 
             <div class="col-lg-12 col-md-12 hidden-sm hidden-xs">
-                <br/>
-
-                <div class="container">
+                <div class="container" style="margin-bottom: 20px">
                     <div class="row">
                         <div class="col-md-6 col-lg-6 col-md-offset-2 col-lg-offset-2">
                             <h3>WE WELCOME FRESHERS!</h3>
@@ -160,56 +161,61 @@
                     </div>
                 </div>
                 <br/>
+                <br/>
+                <br/>
 
                 <div ng-hide="showJobs === true" class="text-center">
                     <img src="img/loader.gif" alt="Preloader image">
                 </div>
-                <div class="intro-table intro-table-third" style="height: 300px" ng-show="showJobs === true">
-                    <!--<h4 style=" padding: 2%; color: #ffffff">Our Latest Job Offers</h4>-->
-
-                    <!--<div class="bottom">-->
-                    <div class="owl-testimonials bottom">
-                        <!--Can add item via div item-->
-                        <!--Can add item via div item-->
-                        <!--Can add item via div item-->
-                        <div class="item" ng-repeat="job in jobs">
-                            <div class="row">
-                                <div class="col=md-4 col-lg-4" ng-repeat="detail in job">
-                                    <div style="padding-left: 25px; height: 250px">
-                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                        <h4 style="color: white">{{detail.job_title}}</h4>
+                <div class="" ng-show="showJobs === true">
+                    <div class="intro-table intro-table-third" style="height: 300px">
+                        <div style="background-color: #1967A9; padding: 7px 2px 2px 2px">
+                            <h4 style="color: #ffffff; padding-left: 20px">Our Latest Job Offers</h4>
+                        </div>
+                        <!--<div class="bottom">-->
+                        <div class="owl-testimonials bottom">
+                            <!--Can add item via div item-->
+                            <!--Can add item via div item-->
+                            <!--Can add item via div item-->
+                            <div class="item" ng-repeat="job in jobs">
+                                <div class="row">
+                                    <div class="col=md-4 col-lg-4" ng-repeat="detail in job">
+                                        <div style="padding-left: 20px; padding-right: 20px; height: 280px">
+                                            <div style="padding-top: 30px">
+                                                <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                                <h5 style="color: white">{{detail.job_title}}</h5>
                                         <span style="font-size: 15px; color: white">
                                             {{detail.job_desc}}
                                         </span>
 
-                                        <div style="color: white; margin-top: 10px">
-                                            Salary Range: {{detail.salary_range}} <br/>
+                                                <div style="color: white; margin-top: 10px">
+                                                    Salary Range: {{detail.salary_range}} <br/>
+                                                </div>
+
+                                                </p>
+                                            </div>
                                         </div>
+                                        <div style="text-align: left; padding-left: 20px" class="">
+                                            <a class="btn btn-info btn-sm" href="job.html#/{{detail.job_id}}"
+                                               style="background-color: #31B9FF; padding: 5px; font-size: 17px"
+                                               type="submit">View Job</a>
+                                        </div>
+                                        <br/>
+                                    </div>
 
-                                        </p>
-                                    </div>
-                                    <div style="text-align: left; padding-left: 25px" class="">
-                                        <a class="btn btn-info btn-sm" href="job.html#/{{detail.job_id}}"
-                                           style="background-color: #31B9FF; padding: 5px; font-size: 17px"
-                                           type="submit">View Job</a>
-                                    </div>
-                                    <br/>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
-                </div>
-                <div style="text-align: right; font-size: 15px" class="white blue col-md-offset-1">
-                    <a href="jobList.html" class="fa fa-search" style="cursor: pointer">
-                        <b style="font-family: arial">
-                            View all
-                        </b>
-                    </a>
+                    <div style="text-align: right; font-size: 12px; background-color: #1967A9; padding: 10px">
+                        <a href="jobList.html" class="fa fa-search btn btn-xs btn-blue" style="cursor: pointer">
+                            <b style="font-family: arial">
+                                View Job List
+                            </b>
+                        </a>
+                    </div>
                 </div>
             </div>
-
             <!--MOBILE UI-->
             <!--MOBILE UI-->
             <!--MOBILE UI-->
@@ -218,124 +224,220 @@
             <br/>
             <br/>
             <br/>
-
-            <div class="owl-testimonials bottom hidden-md hidden-lg">
-
-                <div class="col-sm-12 col-xs-12">
-                    <br/>
-
-                    <div class="row text-center title">
-                        <h5>
-                            <b>
-                                WE WELCOME FRESHERS!
-                            </b>
-
-                        </h5>
-
-                        <p style="font-size: 10px">Job openings for Fresh Graduates and Undergraduates are
-                            available.
-                            Apply as Customer Care or Technical Support!</p>
-                        <!--<a href="jobList.html">Apply Now</a>-->
-                        <a href="jobList.html" class="btn btn-blue"> <b
-                                style="color: #ffffff">Apply Now</b></a>
-
-
-                    </div>
-                    <div class="intro-table intro-table-third" ng-show="showJobs === true">
-                        <h5 style=" padding: 10%; color: #ffffff; text-align: center; font-size: 17px">Our Latest Job Offers</h5>
+            <section class="owl-testimonials bottom hidden-md hidden-lg">
+                <div>
+                    <div class="col-sm-12 col-xs-12">
                         <br/>
 
-                        <div class="owl-testimonials bottom">
-                            <div class="item" ng-repeat="jm in jobsMobile">
-                                <div>
-                                    <div>
-                                        <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                            <b style="font-size: 15px">
-                                                <span style="font-size: 15px;">{{jm.job_title}}</span><br/>
+                        <div class="row text-center title">
+                            <h5>
+                                <b>
+                                    WE WELCOME FRESHERS!
+                                </b>
 
-                                            </b>
-                                            {{jm.job_desc}}
+                            </h5>
+
+                            <p style="font-size: 10px">Job openings for Fresh Graduates and Undergraduates are
+                                available.
+                                Apply as Customer Care or Technical Support!</p>
+                            <!--<a href="jobList.html">Apply Now</a>-->
+                            <a href="jobList.html" class="btn btn-sm btn-blue" style="color: #ffffff; padding: 5px 10px 5px 10px">
+                                <b>Apply Now</b></a>
+                            <br/>
+                            <br/>
+                        </div>
+                        <div class="intro-table intro-table-third" ng-show="showJobs === true">
+                            <div style="background-color: #1967A9; padding: 7px 2px 2px 2px">
+                                <h5 style="color: #ffffff; padding-left: 20px">Our Latest Job Offers</h5>
+                            </div>
+
+                            <div class="owl-testimonials bottom">
+                                <div class="item" ng-repeat="jm in jobsMobile">
+                                    <div>
+                                        <div>
+                                            <p class="white heading light" style="font-size: 12px; color: #ffffff">
+                                                <b style="font-size: 15px">
+                                                    <span style="font-size: 15px;">{{jm.job_title}}</span><br/>
+
+                                                </b>
+                                                {{jm.job_desc}}
+
                                             <div style="color: white; padding-left: 30px">
                                                 {{jm.salary_range}} <br/>
                                             </div>
-                                        </p>
+                                            </p>
 
-                                        <div style="padding-left: 30px">
-                                            <a class="btn btn-info btn-xs" href="job.html#/{{job.job_id}}"
-                                               style="background-color: #31B9FF; coloor: white">View Job</a>
+                                            <div style="padding-left: 30px">
+                                                <a class="btn btn-info btn-xs" href="job.html#/{{job.job_id}}"
+                                                   style="background-color: #31B9FF; color: white;padding: 5px 10px 5px 10px">View Job</a>
+                                            </div>
+
                                         </div>
-
+                                        <br/>
                                     </div>
-                                    <br/>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     </div>
 </section>
-<div id="blog" style="padding: 140px 0 40px">
-    <style>
-        .owl-controls {
-            margin-top: 5px !important;
-        }
-    </style>
-    <!--<section class="blue-bg hidden-xs hidden-sm" ng-show="showBlogs === true">-->
-    <section class="blue-bg hidden-xs hidden-sm">
-        <div class="row">
-            <div class="col-md-12 col-lg-12 " style="background-color: #003399; fill-opacity: 5">
-                <h3 style="text-align: left; color: white;" class="col-md-offset-1 col-lg-offset-1">
-                    Featured Blogs
-                    <i>
-                        <div class="fa fa-pencil-square-o">
-                        </div>
-                        <a href="blogList.html"><b
-                                style="color: #ffffff; font-family: arial; font-size: 15px">View Blogs</b></a>
-                    </i>
-                </h3>
-            </div>
+<section id="blog" class="section section-padded">
+    <div>
+        <style>
+            .owl-controls {
+                margin-top: 5px !important;
+            }
+        </style>
+        <!--<section class="blue-bg hidden-xs hidden-sm" ng-show="showBlogs === true">-->
+        <div class="blue-bg hidden-xs hidden-sm">
 
-        </div>
-        <div class="container">
-            <div class="owl-twitter owl-carousel col-md-12 col-lg-12">
-                <div class="item" style="margin: 20px" ng-repeat="blog in blogs">
-                    <div class="row">
-                        <div class="col-md-3 col-lg-3" style="padding: 2% 5% 2% 6%">
-                            <img src="{{globals.remoteRootUrl}}uploads/blogs/{{blog.blog_id}}/{{blog.blogPic}}"
-                                 class="circular" alt=""/>
-                            <br/>
-                            <br/>
-                            <!--<a ng-click="viewBlog(blog.blog_id)" class="btn btn-info btn-xs" style="background-color: #31B9FF">Read More</a>-->
-                            <a href="blog.html#/{{blog.blog_id}}" class="btn btn-info btn-xs" style="background-color: #31B9FF">Read More</a>
-                        </div>
-                        <div class="item text-left col-md-8 col-lg-8">
-                            <h4 class="white heading" style="cursor: pointer">{{blog.blog_title}} </h4>
+            <div class="container" style="height: 350px">
+                <div>
+                    <div style="background-color: #1967A9; padding: 6px 2px 2px 2px; text-align: center">
+                        <h3 style="color: #ffffff; padding-left: 20px">Featured Blogs
+                            <span class="fa fa-edit" style="color: white; font-size: 30px"></span>
+                        </h3>
 
-                            <div class="row white light">
-                                <div class="col-md-6 col-lg-6">
-                                    {{blog.user_fullname}}
-                                </div>
-                                <div class="col-md-6 col-lg-6" style="text-align: right">
-                                    {{blog.date_posted}}
-                                </div>
+                    </div>
+                </div>
+                <div class="owl-twitter owl-carousel col-md-12 col-lg-12">
+                    <div class="item" style="margin: 20px 20px 2px 20px" ng-repeat="blog in blogs">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-3" style="padding: 2% 5% 2% 6%">
+                                <img src="{{globals.remoteRootUrl}}uploads/blogs/{{blog.blog_id}}/{{blog.blogPic}}"
+                                     class="circular" alt=""/>
+                                <br/>
+                                <br/>
+                                <!--<a ng-click="viewBlog(blog.blog_id)" class="btn btn-info btn-xs" style="background-color: #31B9FF">Read More</a>-->
+                                <a href="blog.html#/{{blog.blog_id}}" class="btn btn-info btn-xs"
+                                   style="background-color: #31B9FF">Read More</a>
                             </div>
-                            <div class="row"
-                                 style="border-top: 1px solid #ffffff; margin-top: 10px; border-bottom: 1px solid white">
-                                <p class="white light"
-                                   style="width: 90%; padding: 15px; color: #ffffff; font-size: 15px">
-                                    {{blog.blog_desc}}
-                                </p>
+                            <div class="item text-left col-md-8 col-lg-8">
+                                <h4 class="white heading" style="cursor: pointer">{{blog.blog_title}} </h4>
+
+                                <div class="row white light">
+                                    <div class="col-md-6 col-lg-6">
+                                        {{blog.user_fullname}}
+                                    </div>
+                                    <div class="col-md-6 col-lg-6" style="text-align: right">
+                                        {{blog.date_posted}}
+                                    </div>
+                                </div>
+                                <div class="row"
+                                     style="border-top: 1px solid #ffffff; margin-top: 10px; border-bottom: 1px solid white">
+                                    <p class="white light"
+                                       style="width: 90%; padding: 15px; color: #ffffff; font-size: 15px">
+                                        {{blog.blog_desc}}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-    </section>
-</div>
+            <div style="text-align: right; font-size: 12px; background-color: #1967A9; padding-right: 70px; padding-bottom: 10px">
+                <a href="blog.html" class="fa fa-search btn btn-xs btn-blue" style="cursor: pointer">
+                    <b style="font-family: arial">
+                        View All Blogs
+                    </b>
+                </a>
+            </div>
+        </div>
+        <!--mobile ui-->
+        <!--mobile ui-->
+        <section class="section section-padded gray-bg">
+            <blockquote>
+                <p></p>
+            </blockquote>
+        </section>
+        <div class="hidden-md hidden-lg ">
+            <style>
+                .owl-controls {
+                    margin-top: 5px !important;
+                }
+            </style>
+            <!--<section class="blue-bg hidden-xs hidden-sm" ng-show="showBlogs === true">-->
+            <div class="blue-bg">
+                <div style="background-color: #31B9FF;">
+                    <div>
+                        <p style="text-align: center; color: white; font-size: 20px">
+                            Featured Blogs
+                            <i class="fa fa-pencil-square-o" style="color: white;font-size: 20px ">
+                            </i>
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="owl-twitter owl-carousel">
+                        <div ng-repeat="blog in blogs">
+                            <div class="row" style="padding-left: 20px; padding-right: 20px">
+                                <div>
+                                    <div class="col-xs-12 col-sm-12" style="margin-bottom: 20px">
+                                        <div class="row">
+                                            <div style="text-align: left" class="col-xs-4 col-sm-4">
+                                                <img src="{{globals.remoteRootUrl}}uploads/blogs/{{blog.blog_id}}/{{blog.blogPic}}"
+                                                     class="circular" alt="" style="height: 100px;width: 100px"/>
+                                                <br/>
+                                                <!--<a ng-click="viewBlog(blog.blog_id)" class="btn btn-info btn-xs" style="background-color: #31B9FF">Read More</a>-->
+                                            </div>
+                                            <div style="text-align: left" class="col-xs-8 col-sm-8">
+                                                <h5 class="white heading" style="cursor: pointer; text-align: left">
+                                                    {{blog.blog_title}} </h5>
+
+                                                <div class="row">
+                                                    <div class="item col-xs-12 col-sm-12">
+                                                        <div style="color: white">
+                                                            <div style="color: white">
+                                                                <span class="fa fa-user"
+                                                                      style="font-size: 15px; color: white">
+
+                                                                </span>
+                                                                <span style="font-size: 12px">{{blog.user_fullname}}</span>
+                                                                &nbsp &nbsp
+                                                                <span class="fa fa-clock-o"
+                                                                      style="font-size: 15px; color: white">
+                                                                </span>
+                                                                <span style="font-size: 12px">{{blog.date_posted}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row"
+                                             style="border-top: 1px solid #ffffff; margin-top: 20px; border-bottom: 1px solid white">
+                                            <p class="white light"
+                                               style="width: 90%;padding-top:10px; color: #ffffff; font-size: 12px">
+                                                {{blog.blog_desc}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div  style="text-align: center">
+                                    <a href="blog.html#/{{blog.blog_id}}" class="btn btn-info btn-sm"
+                                       style="background-color: #31B9FF; padding: 5px 10px 5px 10px;">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background-color: #0182C6; text-align: center">
+            <a href="blogList.html" class="btn btn-sm btn-info">
+                <b style="color: #ffffff; font-family: arial; font-size: 15px">Visit Our Blogs Here</b>
+            </a>
+        </div>
+        <!--mobile ui-->
+        <!--mobile ui-->
+    </div>
+</section>
+
 <div class="container">
     <div class="row services">
         <div class="col-md-4">
@@ -603,9 +705,9 @@
         </div>
     </div>
 </section>
-<section class="section" style="padding: 30px">
-    <div id="googleMap" style="height: 350px; width: auto"></div>
-</section>
+<!--<section class="section" style="padding: 30px">-->
+<!--<div id="googleMap" style="height: 350px; width: auto"></div>-->
+<!--</section>-->
 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content modal-popup">

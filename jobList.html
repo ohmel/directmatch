@@ -57,10 +57,11 @@
 
 <body ng-controller="mainController">
 <div class="preloader">
-    <img src="img/loader.gif" alt="Preloader image"%">
+    <img src="img/loader.gif" alt="Preloader image">
 </div>
 
-<nav class="navbar col-md-12 col-sm-4">
+<nav class="navbar col-md-12 col-lg-12 hidden-xs hidden-sm">
+    <!--<nav class="navbar col-md-12 col-lg-12">-->
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -83,7 +84,10 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-nav">
-                <li><a href="index.html" style="color: #1967a9">Home</a></li>
+                <li><a href="index.html#intro" style="color: #1967a9">Home</a></li>
+                <li><a href="index.html#services" style="color: #1967a9">Our Offers</a></li>
+                <li><a href="index.html#blog" style="color: #1967a9">Blogs</a></li>
+                <li><a href="index.html#team" style="color: #1967a9">Our Company</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue"> <b
                         style="color: #ffffff">Contact Us</b></a></li>
             </ul>
@@ -92,22 +96,14 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-<section class="section" style="padding-top: 170px">
+
+<section class="section hidden-xs hidden-sm" style="padding-top: 170px">
     <div class="row">
         <div class="col-md-12 col-lg-12 hidden-xs hidden-sm" style="background-color: #1967A9">
             <div class="row">
-                <div class="col-md-1 col-lg-1 hidden-xs hidden-sm">
-                    <h3>
-                        <a href="index.html#services" class="fa fa-arrow-circle-left"
-                           style="padding-left: 30px; color: white"></a>
-                    </h3>
-                </div>
-                <div class="col-md-11 col-lg-11 hidden-xs hidden-sm">
-                    <h4 style="color: #ffffff">Job Openings</h4>
-                </div>
+                <h4 style="color: #ffffff; padding-left: 100px">Job Openings</h4>
             </div>
         </div>
-    </div>
     </div>
     <div class="container">
         <div class="col-md-12 col-sm-12 hidden-xs hidden-sm">
@@ -146,7 +142,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-2 col-lg-2 hidden-xs hidden-sm">
+                                        <div class="col-md-2 col-lg-2 hidden-xs hidden-sm" style="margin-top: 35px">
                                             <a href="job.html#/{{job.job_id}}"
                                                class="btn btn-blue" style="font-size: 12px">
                                                 <b>
@@ -221,31 +217,34 @@
 <!--Mobile UI-->
 <!--Mobile UI-->
 <!--Mobile UI-->
-<section class="section gray-bg">
-    <div class="col-xs-12 col-sm-12 hidden-lg hidden-md" style="background-color: #1967A9; padding: 10px">
+<section class="hidden-md hidden-lg gray-bg">
+    <div class="col-xs-12 col-sm-12 hidden-lg hidden-md gray-bg"
+         style="background-color: #1967A9; padding: 10px; margin-bottom: 10px">
         <div>
-            <a href="index.html"><i class="fa fa-arrow-circle-left" style="font-size: 30px; color: #ffffff"></i>
-                &nbsp; <b style="color: #ffffff; font-size: 20px">
-                    Job Opening
+            <a href="index.html">
+                <i class="fa fa-arrow-circle-left" style="font-size: 25px; color: #ffffff"></i>
+                &nbsp
+                <span style="font-size: 30px; color: lightgray">|</span>
+                &nbsp
+                <b style="color: #ffffff; font-size: 20px">
+                    Job Openings
                 </b></a>
         </div>
     </div>
-    <div class="row white-bg  hidden-lg hidden-md" style="
-         padding-left: 30px;
-         padding-right: 30px;
-         padding-bottom: 0px;
-         padding-top: 20px;
-         margin-top: 50px;
-         border-bottom: solid 1px dimgrey" ng-repeat="job in jobs">
-        <div>
-            <div style="border-bottom: 1px solid lightgray; margin-bottom: 10px">
+    <div class="row white-bg  hidden-lg hidden-md" style="padding-bottom: 0px; padding-top: 20px; margin-top:5px" ng-repeat="job in jobsMobile">
+        <div style="padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 0px;
+        padding-top: 20px;
+        margin-top: 20px;
+        border-bottom: 1px solid lightgray">
+            <div style="margin-bottom: 10px">
                 <b style="font-size: 14px">{{job.job_title}}</b>
-
                 <p style="font-size: 10px">
                     {{job.job_desc}}
                 </p>
             </div>
-            <div class="col-xs-12 col-sm-12 hidden-lg hidden-md" style="padding: 0px; margin-bottom: 10px">
+            <div class="col-xs-12 col-sm-12 hidden-lg hidden-md" style="padding: 10px; margin-bottom: 10px">
                 <div style="font-size: 12px">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 hidden-md hidden-lg">
