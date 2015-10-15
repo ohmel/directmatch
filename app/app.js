@@ -36,6 +36,7 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
     $scope.showJobs = false;
     $scope.showBlogs = false;
     $scope.successMessage = "";
+    $scope.mobileCheckValid = false;
 
     var location = $location.path();
     $scope.jobId = location.replace("/", "");
@@ -57,6 +58,16 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
                                     var location = $location.path();
                                     $scope.jobId = location.replace("/", "");
                                     $scope.urlSubmit = Globals.remoteRootUrl2 + "/index.php/job/updateTel/" + $scope.jobId;
+                                    $scope.mobileCheckValid = false;
+                                    $scope.checkMob = function(mob){
+                                        if(mob.length < 13 || mob.length > 13){
+                                            $scope.mobileCheck = "Mobile number should be 13 characters long. (example: +63**********)"
+                                            $scope.mobileCheckValid = true;
+                                        }else{
+                                            $scope.mobileCheck = "";
+                                            $scope.mobileCheckValid = true;
+                                        }
+                                    }
                                 }]
                             });
                         }, function (onError) {
@@ -75,12 +86,21 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
         });
     }
 
+    $scope.checkMob = function(mob){
+        if(mob.length < 13 || mob.length > 13){
+            $scope.mobileCheck = "Mobile number should be 13 characters long. (example: +63**********)"
+            $scope.mobileCheckValid = true;
+        }else{
+            $scope.mobileCheck = "";
+            $scope.mobileCheckValid = true;
+        }
 
+    }
 
     $scope.fbLogin = function (jobId) {
 
         $facebook.login().then(
-            function (response) {
+            function (loginSuccess) {
                 $facebook.api('/me', {fields: 'email, last_name, first_name, middle_name'}).then(
                     function (response) {
                         mainService.fbApply(
@@ -112,18 +132,6 @@ dmApp.controller('mainController', function ($http, $linkedIn, ngNotify, $facebo
                 $facebook.logout();
             }
         )
-    }
-    $scope.fbShare = function () {
-        $facebook.ui({
-            method: 'share',
-            href: 'https://directmatchoutsourcing.com',
-        }).then(
-            function (success) {
-                alert("success");
-            }, function (error) {
-                alert("error");
-            }
-        );
     }
 
     $scope.contactUs = function(cont){
@@ -224,4 +232,6 @@ dmApp.controller('blogController', function ($location, $scope, Globals, ngDialo
         }, $scope.blogId
     )
 });
+
+
 // create the controller and inject Angular's $scope

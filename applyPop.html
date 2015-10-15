@@ -44,9 +44,10 @@
         <h3 style="color: white; !important;">We need your Contact Number</h3>{{appId}}
         <form action="{{urlSubmit}}" method="post" class="popup-form" novalidate>
             <input type="text" name="telephone" class="form-control form-white" placeholder="Telephone Number">
-            <input type="text" name="mobile" class="form-control form-white" placeholder="mobile Number">
+            <input type="text" name="mobile" class="form-control form-white" ng-model="mob" ng-keyup="checkMob(mob)" placeholder="Mobile Number">
+            <span ng-if="mobileCheck != ''">{{mobileCheck}}</span>
             <input type="hidden" name="appId" value="{{appId}}" class="form-control form-white">
-            <button type="submit" class="btn btn-submit">Submit</button>
+            <button type="submit" ng-disabled="mobileCheckValid == false" class="btn btn-submit">Submit</button>
         </form>
     </div>
 </div>

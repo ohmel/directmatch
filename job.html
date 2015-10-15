@@ -12,9 +12,12 @@
 
     <meta property="og:url"                content="http://directmatchoutsourcing.com/job.html#/19" />
     <meta property="og:type"               content="article" />
-    <meta property="og:title"              content="{{job.job_title}}" />
-    <meta property="og:description"        content="{{job.job_desc}}" />
-    <!--<meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />-->
+    <meta property="og:title"              content="Need a Job? We can help you!" />
+    <meta property="og:description"        content="" />
+    <meta property="og:image" content="http://directmatchoutsourcing.com/directmatch/img/icons/heart-blue.png" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="100" />
+    <meta property="og:image:height" content="100" />
 
     <!-- Favicons (created with http://realfavicongenerator.net/)-->
     <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
@@ -60,7 +63,6 @@
     <script src="plugins/tinymce/tinymce.min.js"></script>
     <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
     <script src="http://connect.facebook.net/en_US/sdk.js"></script>
-
     <script src="app/app.js"></script>
     <script src="app/routing.js"></script>
     <script src="bower_components/ng-facebook/ngFacebook.js"></script>
@@ -70,6 +72,7 @@
 </head>
 
 <body ng-controller="mainController">
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-561fbb498e4e3d97" async="async"></script>
 <div class="preloader">
     <img src="img/loader.gif" alt="Preloader image">
 </div>
@@ -145,10 +148,12 @@
                                             </div>
                                         </div>
                                         <div class="col-md-3 hidden-sm hidden-xs">
-                                            <a style="cursor: pointer; width: 100%; height: 25%; text-align: center" class="btn btn-blue" ng-click="fbShare()">
-                                                <b>Share to</b>
-                                                <b style="color: #ffffff" class="fa fa-facebook-square"></b>
-                                            </a>
+                                            <!--<a style="cursor: pointer; width: 100%; height: 25%; text-align: center" class="btn btn-blue" ng-click="fbShare()">-->
+                                                <!--<b>Share to</b>-->
+                                                <!--<b style="color: #ffffff" class="fa fa-facebook-square"></b>-->
+                                            <!--</a>-->
+                                            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                                            <div class="addthis_sharing_toolbox"></div>
                                             <div>
                                                 <div style="font-size: 15px">
                                                     <i class="fa fa-money" style="color: #1967A9">
@@ -448,7 +453,8 @@
                 <input type="text" name="lastName" class="form-control form-white" placeholder="Last Name">
                 <input type="text" name="middleName" class="form-control form-white" placeholder="Middle Name">
                 <input type="email" name="email" class="form-control form-white" placeholder="Email Address">
-                <input type="text" name="mobile" class="form-control form-white" placeholder="Mobile Number">
+                <input type="text" name="mobile" class="form-control form-white" ng-model="mob" ng-keyup="checkMob(mob)" placeholder="Mobile Number">
+                <span ng-if="mobileCheck != ''">{{mobileCheck}}</span>
                 <input type="text" name="telephone" class="form-control form-white" placeholder="Telephone Number">
                 <textarea name="remarks" id="" cols="30" rows="4" class="form-control form-white" placeholder="Do you want to say something?"></textarea>
 
@@ -456,7 +462,7 @@
                     Attach your CV here. (Must be PDF format)
                 </p>
                 <input type="file" name="cv" class="file form-control form-white"/>
-                <button type="submit" class="btn btn-submit">Submit</button>
+                <button type="submit" ng-disabled="mobileCheckValid == false" class="btn btn-submit">Submit</button>
             </form>
         </div>
     </div>
