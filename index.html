@@ -56,7 +56,7 @@
     <script src="app/services/mainService.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script>
-        var myCenter = new google.maps.LatLng(14.55644538, 121.02571115);
+        var myCenter = new google.maps.LatLng(14.55661,121.02554);
 
         function initialize() {
             var mapProp = {
@@ -183,7 +183,7 @@
                                         <div style="padding-left: 20px; padding-right: 20px; height: 280px">
                                             <div style="padding-top: 30px">
                                                 <p class="white heading light" style="font-size: 12px; color: #ffffff">
-                                                <h5 style="color: white">{{detail.job_title}}</h5>
+                                                    <h4 style="color: white">{{detail.job_title}}</h4>
                                                 <span style="font-size: 15px; color: white">
                                                      {{detail.job_desc}}
                                                 </span>
@@ -379,7 +379,7 @@
                                         <div class="row">
                                             <div style="text-align: left" class="col-xs-4 col-sm-4">
                                                 <img src="{{globals.remoteRootUrl}}uploads/blogs/{{blog.blog_id}}/{{blog.blogPic}}"
-                                                     class="circular" alt="" style="height: 100px;width: 100px"/>
+                                                     class="circular" alt="" style="height: 100px;width: 100px; margin-top: 10px; padding: 10px"/>
                                                 <br/>
                                                 <!--<a ng-click="viewBlog(blog.blog_id)" class="btn btn-info btn-xs" style="background-color: #31B9FF">Read More</a>-->
                                             </div>
@@ -751,15 +751,24 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.youtube.com/watch?v=fiQ3o7FJqFA" target="_blank">
-                        <i class="fa fa-youtube"></i>
+                    <a href="https://www.linkedin.com/company/direct-match-outsourcing-inc" target="_blank">
+                        <i class="fa fa-twitter"></i>
                     </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/company/direct-match-outsourcing-inc" target="_blank">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </li>
                 <li>
                     <a href="https://www.linkedin.com/company/direct-match-outsourcing-inc" target="_blank">
                         <i class="fa fa-linkedin"></i>
                     </a>
                 </li>
-
+                <li>
+                    <a href="https://www.youtube.com/watch?v=fiQ3o7FJqFA" target="_blank">
+                        <i class="fa fa-youtube"></i>
+                    </a>
                 </li>
             </div>
         </ul>

@@ -22,7 +22,7 @@
     <link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="img/favicons/manifest.json">
-    <link rel="shortcut icon" href="img/favicons/favicon.ico">
+    <link rel="shortcut icon" href="img/favicons/favicon-16x16.png">
     <meta name="msapplication-TileColor" content="#00a8ff">
     <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
@@ -145,21 +145,25 @@
                                             </div>
                                         </div>
                                         <div class="col-md-3 hidden-sm hidden-xs">
+                                            <a style="cursor: pointer; width: 100%; height: 25%; text-align: center" class="btn btn-blue" ng-click="fbShare()">
+                                                <b>Share to</b>
+                                                <b style="color: #ffffff" class="fa fa-facebook-square"></b>
+                                            </a>
                                             <div>
                                                 <div style="font-size: 15px">
-                                                    <i class="fa fa-money" style="color: dimgray">
+                                                    <i class="fa fa-money" style="color: #1967A9">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
                                                             {{job.salary_range}}
                                                         </a>
                                                     </i>
                                                     <br/>
-                                                    <i class="fa fa-location-arrow" style="color: dimgray">
+                                                    <i class="fa fa-location-arrow" style="color: #1967A9">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
                                                             {{job.location}}
                                                         </a>
                                                     </i>
                                                     <br/>
-                                                    <i class="fa fa-info-circle" style="color: dimgray">
+                                                    <i class="fa fa-info-circle" style="color: #1967A9">
                                                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 12px">
                                                             {{job.category}}
                                                         </a>
@@ -176,22 +180,15 @@
                                             <a href="#/{{jobId}}" data-toggle="modal" data-target="#modal2" class="btn btn-blue">
                                                 <b
                                                         style="color: #ffffff">Apply here</b></a>
-                                            <a ng-click="connect(jobId)" class="btn btn-blue"><b
-                                                    style="color: #ffffff">Linked</b>
+                                            <b>or</b>
+                                            <a ng-click="connect(jobId)" class="btn btn-blue"><b style="color: #ffffff"> Apply Via</b>
                                                 <b class="fa fa-linkedin-square">
-                                                </b></a>
-                                            <a style="cursor: pointer" class="btn btn-blue" ng-click="fbLogin(jobId)">
-                                                <b style="color: #ffffff" class="fa fa-facebook-square"></b>
-                                                <b>
-                                                    Facebook
                                                 </b>
                                             </a>
-                                            <a style="cursor: pointer" class="btn btn-blue" ng-click="fbShare()">
+                                            <a style="cursor: pointer" class="btn btn-blue" ng-click="fbLogin(jobId)"><b style="color: #ffffff"> Apply Via</b>
                                                 <b style="color: #ffffff" class="fa fa-facebook-square"></b>
-                                                <b>
-                                                    Facebook Share
-                                                </b>
                                             </a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -276,6 +273,12 @@
     <div class="row hidden-md hidden-lg"
          style="padding-bottom: 0px; padding-top: 20px">
         <div style="padding-left: 30px; padding-right: 30px; padding-bottom: 0px; padding-top: 20px; margin-top: 20px">
+            <div style="text-align: right">
+                <a style=" cursor: pointer; padding: 5px 10px 5px 10px; margin-top:10px; font-size: 12px" class="btn btn-blue" ng-click="fbShare()" style="padding: 5px 10px 5px 10px">
+                    <b>Share to</b>
+                    <b style="color: #ffffff; font-size: 12px" class="fa fa-facebook-square"></b>
+                </a>
+            </div>
             <div style="border-bottom: 1px solid dimgray">
                 <div>
                     <h5>{{job.job_title}}</h5>
@@ -285,25 +288,19 @@
                     </p>
                 </div>
                 <div>
-                    <i class="fa fa-clock-o" style="color: dimgray">
-                        <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
-                            {{job.date_posted}}
-                        </a>
-                    </i>
-                    <br/>
-                    <i class="fa fa-location-arrow" style="color: dimgray">
+                    <i class="fa fa-location-arrow" style="color: #1967A9">
                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
                             {{job.location}}
                         </a>
                     </i>
                     <br/>
-                    <i class="fa fa-money" style="color: dimgray">
+                    <i class="fa fa-money" style="color: #1967A9">
                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
                             {{job.salary_range}}php
                         </a>
                     </i>
                     <br/>
-                    <i class="fa fa-info-circle" style="color: dimgray">
+                    <i class="fa fa-info-circle" style="color: #1967A9">
                         <a style="color: dimgray; font-family: Arial, sans-serif; font-size: 10px">
                             {{job.category}}
                         </a>
@@ -315,29 +312,20 @@
                 <div style="font-size: 12px; color: dimgray; margin-top: 10px">
                     <div ng-bind-html="job.job_body | to_trusted" style="padding-left: 20px; padding-right: 20px"></div>
                 </div>
-                <div style="text-align: center">
+                <div style="text-align: center; border-top: 1px solid lightgray; padding: 5px">
                     <a href="#/{{jobId}}" data-toggle="modal" data-target="#modal2" class="btn btn-blue">
                         <b style="color: #ffffff">Apply here</b>
                     </a>
-                    <br/>
-                    <br/>
-                    <!--<a ng-click="connect(jobId)" class="btn btn-blue" style="padding: 5px 10px 5px 10px"><b-->
-                            <!--style="color: #ffffff; font-size: 12px">Linked</b>-->
-                        <!--<b class="fa fa-linkedin-square" style=" font-size: 12px">-->
-                        <!--</b>-->
-                    <!--</a>-->
-                    <!--<a style="cursor: pointer; padding: 5px 10px 5px 10px;  font-size: 12px" class="btn btn-blue" ng-click="fbLogin(jobId)">-->
-                        <!--<b style="color: #ffffff; font-size: 12px" class="fa fa-facebook-square"></b>-->
-                        <!--<b>-->
-                            <!--Facebook-->
-                        <!--</b>-->
-                    <!--</a>-->
-                    <!--<a style="cursor: pointer; padding: 5px 10px 5px 10px; font-size: 12px" class="btn btn-blue" ng-click="fbShare()" style="padding: 5px 10px 5px 10px">-->
-                        <!--<b style="color: #ffffff; font-size: 12px" class="fa fa-facebook-square"></b>-->
-                        <!--<b>-->
-                            <!--Facebook Share-->
-                        <!--</b>-->
-                    <!--</a>-->
+                    &nbsp
+                    <b>or Apply via</b>
+                    <span style="margin: 10px">
+                        <a ng-click="connect(jobId)" class="btn btn-blue" style="cursor: pointer; padding: 5px 15px 5px 15px;  font-size: 30px">
+                            <b class="fa fa-linkedin-square"style="color: #ffffff; font-size: 30px"></b>
+                        </a>
+                        <a style="cursor: pointer; padding: 5px 15px 5px 15px;  font-size: 30px" class="btn btn-blue" ng-click="fbLogin(jobId)">
+                            <b style="color: #ffffff; font-size: 30px" class="fa fa-facebook-square"></b>
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>
@@ -490,15 +478,24 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.youtube.com/watch?v=fiQ3o7FJqFA" target="_blank">
-                        <i class="fa fa-youtube"></i>
+                    <a href="https://www.linkedin.com/company/direct-match-outsourcing-inc" target="_blank">
+                        <i class="fa fa-twitter"></i>
                     </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/company/direct-match-outsourcing-inc" target="_blank">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </li>
                 <li>
                     <a href="https://www.linkedin.com/company/direct-match-outsourcing-inc" target="_blank">
                         <i class="fa fa-linkedin"></i>
                     </a>
                 </li>
-
+                <li>
+                    <a href="https://www.youtube.com/watch?v=fiQ3o7FJqFA" target="_blank">
+                        <i class="fa fa-youtube"></i>
+                    </a>
                 </li>
             </div>
         </ul>
